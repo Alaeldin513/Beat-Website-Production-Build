@@ -1,0 +1,99 @@
+.navbar {
+    background: linear-gradient(90deg, rgb(163, 37, 146) 0%, rgb(235, 157, 13) 100%);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  .wholebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    max-width: 1500px;
+  }
+
+  .logo {
+    position: absolute;
+    justify-self: start;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transform: translate(25%, 50%);
+    background: none;
+    color: orangered;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+  }
+  .logopic {
+    position: absolute;
+    justify-self: start;
+    top: 0;
+    left: 120px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transform: translate(25%, 50%);
+    background: none;
+    color: rgb(235, 157, 13);
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+  }
+
+
+  .GiLion {
+    margin-left: 1rem;
+    font-size: 1.8rem;
+      } 
+
+  .Beats {
+    position: absolute;
+    top: 0;
+    right: 20rem;
+    transform: translate(25%, 50%);
+    background: none;
+    align-items: flex-end;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .Pricing {
+    position: absolute;
+    top: 0;
+    right: 15rem;
+    transform: translate(25%, 50%);
+    background: none;
+    align-items: flex-end;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .About {
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    transform: translate(25%, 50%);
+    background: none;
+    align-items: flex-end;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .Collaboration {
+    position: absolute;
+    top: 0;
+    right: 7.5rem;
+    transform: translate(25%, 50%);
+    background: none;
+    align-items: flex-end;
+    display: inline-block;
+    text-decoration: none;
+  }
+
