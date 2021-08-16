@@ -1,0 +1,49 @@
+.Footer {
+    position: fixed;
+    z-index: 101;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30vh;
+    background-color: transparent;
+    padding: 0;
+    text-align: center;
+}
+
+.insta {
+
+    width: 3rem;
+    /* display: flex; */
+    align-items: center;
+    /* overflow:hidden; */
+    z-index: 100;
+    
+    transform: translate(-2rem, -3rem);
+        
+       
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /* text-decoration: none; */
+        
+}
+
+.twitter {
+    width: 4.3rem;
+    /* display: flex; */
+    align-items: center;
+    /* overflow:hidden; */
+    z-index: 100;
+    
+   /* this section keeps icons centered at all sizes */
+
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* text-decoration: none; */
+
+    transform: translate(-6rem, -3.05rem);
+
+        
+}

@@ -1,17 +1,47 @@
 
 .backsplash {
-z-index: 5;
+z-index: -1;    
 position:relative;
 color:rgba(22, 21, 21, 0.479);
-height: 100vh;
-width: 100%;
+
+
+
+transform: (-10vh, 0);
 display: flex;
 flex-direction: column;
 justify-content:  center;
 align-items: center;
-box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.2);
 object-fit: contain;
-/* background-color: rgb(31, 31, 31); */
+background-color: rgba(255, 255, 255,0);
+
+
+}
+
+
+
+.purplebeach{
+    position:relative;
+
+    background-color: whitesmoke;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    overflow:hidden;
+    z-index: 0;
+    
+    border-radius: 4%;
+
+        
+       
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-decoration: none;
+        transform: translate(-19.5rem, 8.3rem);
+    
+
+
 }
 
 
