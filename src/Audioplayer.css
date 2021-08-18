@@ -8,7 +8,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-15rem, -3rem);
+    transform: translate(-12rem, 2rem);
     text-decoration: none;
     color: white;
   }
@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     font-family: monospace;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
 }
 
@@ -71,9 +71,18 @@
  background: var(--bar-bg);
  border-radius: 10px;
  position: relative;
- width: 100%;
+ width: 75%;
  height: 11px;
  outline: none;
+
+ font-size: 3rem;
+ background: none;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ text-decoration: none;
+ transform: translate(-8rem, 9rem);
+ color: white;
 }
 
 /* Safari styling */
@@ -168,10 +177,94 @@
  top: 50%;
  left: 50%;
  text-decoration: none;
- transform: translate(-10.7rem, 4rem);
+ transform: translate(-11rem, 4rem);
  color: purple;
  font-family: Papyrus ;
  width: 100vh;
+}
+.duration {
+    font-family: monospace;
+    font-size: 16px;
+    color: black;
+    position: absolute;
+    top: 160%;
+    left: 107%;
+}
+.currenttime {
+    background: none;
+    position: absolute;
+    top: 160%;
+    left: -30%;
+    text-decoration: none;
+
+}
+
+.currentlyPlaying {
+    font-size: 1.89rem;
+ background: none;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ text-decoration: none;
+ transform: translate(-9.5%, 7rem);
+ color: purple;
+ font-family: Papyrus ;
+ width: 100vh;
+}
+.songsLeft{
+    font-size: 1.89rem;
+    background: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-decoration: none;
+    transform: translate(-6%, 10rem);
+    color: purple;
+    font-family: Papyrus ;
+    width: 100vh; 
+}
+
+
+
+.progressbar {
+ --bar-bg: purple;
+ --seek-before-width: 0;
+ --seek-before-color: orange;
+ --knobby:     blue;
+ --selectedKnobby: cyan;
+
+ appearance: none;
+ background: var(--bar-bg);
+ border-radius: 0;
+ position: relative;
+ width: 175%;
+ height: 11px;
+ outline: none;
+
+ font-size: 2rem;
+ background: none;
+ position: absolute;
+ top: -65%;
+ left: 67%;
+ 
+ 
+ color: white;
+}
+   
+
+.Audioplayer {
+--primary: rgb(0, 60, 128);
+--secondary: orangered;
+z-index:-1;
+display: flex;
+
+background: none;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-5rem, 2rem);
+text-decoration: none;
+color: white;
 }
 
 
@@ -216,4 +309,134 @@ background-color: rgba(255, 255, 255,0);
         text-decoration: none;
 
         transform: translate(-10.5rem, -18rem);
+}
+
+@media screen and (max-width: 800px) {
+    .forwardbackward {
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        font-family: monospace;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .forwardbackward:hover {
+        color: var(--primary)
+    }
+    
+    .playpause {
+       background: var(--primary);
+       border: none;
+       border-radius: 50%;
+       width: 75px;
+       height: 75px; 
+       font-size: 40px;
+       color: var(--secondary) !important;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       transform: translate(0%,0%);
+    }
+    
+    .play {
+        position: relative;
+        left: 2px;
+        color: var(--secondary);
+    }
+    .pause {
+        position: relative;
+        color: var(--secondary);
+    }
+    
+    .duration {
+        font-family: monospace;
+        font-size: 16px;
+        color: black;
+        position: absolute;
+        top: 160%;
+        left: 107%;
+    }
+    .currenttime {
+        background: none;
+        position: absolute;
+        top: 160%;
+        left: -30%;
+        text-decoration: none;
+    
+    }
+    .currentlyPlaying {
+        font-size: 1.89rem;
+     background: none;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     text-decoration: none;
+     transform: translate(-19%, 7rem);
+     color: rgb(185, 0, 185);
+     font-family: Papyrus ;
+     width: 100vh;
+    }
+    .progressbar {
+     --bar-bg: rgb(211, 0, 211);
+     --seek-before-width: 0;
+     --seek-before-color: orange;
+     --knobby:     blue;
+     --selectedKnobby: cyan;
+    
+     appearance: none;
+     background: var(--bar-bg);
+     border-radius: 0;
+     position: relative;
+     width: 175%;
+     height: 11px;
+     outline: none;
+    
+     font-size: 2rem;
+     background: none;
+     position: absolute;
+     top: -65%;
+     left: 67%;
+     
+     
+     color: white;
+    }
+}    
+
+.Audioplayer {
+    --primary: purple;
+    --secondary: orangered;
+    z-index:-1;
+    display: flex;
+    
+    background: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-5rem, 2rem);
+    text-decoration: none;
+    color: white;
+  }
+
+  .songPhoto {
+    position:relative;
+    width:  200%;
+    display: flex;
+    align-items: center;
+    
+    z-index: 1;
+    
+    border-radius: 4%;
+
+    height: 200px;
+
+     
+       
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-decoration: none;
+
+        transform: translate(-45%, -135%);
 }

@@ -1,5 +1,5 @@
 .Footer {
-    position: fixed;
+
     z-index: 101;
     left: 0;
     bottom: 0;
@@ -8,6 +8,14 @@
     background-color: transparent;
     padding: 0;
     text-align: center;
+
+    background: none;
+    position: absolute;
+    top: 77%;
+    left: 0%;
+    text-decoration: none;
+    color: white;
+   
 }
 
 .insta {

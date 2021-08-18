@@ -9,9 +9,6 @@ import Pricing from './pages/Pricing'
 import Footer from './Footer'
 import AudioPlayer from './Audioplayer'
 
-
-
-
 function App() {
   return (
     <>
@@ -21,7 +18,7 @@ function App() {
         <AudioPlayer />
           <Route path='/beats' component = {Beats} />
           <Route path='/pricing' component = {Pricing} />
-        <Footer />    
+        {/* <Footer />     */}
             
             <a>
             

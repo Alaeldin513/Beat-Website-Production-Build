@@ -1,48 +1,60 @@
 import React, {useState, useRef, useEffect, useMemo} from 'react'
 
 import './Audioplayer.css';
-import {BsArrowLeftShort} from 'react-icons/bs'
-import {BsArrowRightShort} from 'react-icons/bs'
+import {IoMdSkipBackward} from 'react-icons/io'
+import {IoMdSkipForward} from 'react-icons/io'
 import {GrPlayFill} from 'react-icons/gr'
 import {GrPauseFill} from 'react-icons/gr'
 
-import Songs from './Songs'
-
-
-
-import { render } from '@testing-library/react';
- 
 
 function AudioPlayer(props) {
     
     const [songs] = useState([
         {
-          title: "Delta Ave",
+            title: "The Funk",
+            artist: "2 chainz",
+            img_src: "../images/fire.jpg",
+            src: "../beats/the funk prod.mp3",
+        },
+        {
+          title: "Mimosa",  
           artist: "Machine Gun Kelly",
-          img_src: "../images/mando.png",
-          src: "../beats/ave 5 G MAJ.mp3",
-          duration: "149"
+          img_src: "../images/mimosa.jfif",
+          src: "../beats/hornsprod.mp3",
+            //index loaded into site initially
         },
         {
-          title: "Trapavelli",
-          artist: "2 chainz",
-          img_src: "../images/purplebeach.jpg",
-          src: "../beats/trapavelliprod.mp3",
-          duration: "149"
-        },
-        {
-        title: "index3pavelli",
+        title: "Orbit",
         artist: "2 chainz",
-        img_src: "../images/song-2.jpg",
-        src: "../beats/trapavelliprod.mp3",
-        duration: "149"
+        img_src: "../images/orbit.jpg",
+        src: "../beats/orbitprod.mp3",
         },
         {
-        title: "index4",
+        title: "Trapavelli",
         artist: "2 chainz",
-        img_src: "../images/song-2.jpg",
-        src: "../beats/trapavelliprod.mp3",
-        duration: "149"
+        img_src: "../images/ig88.jfif",
+        src: "../beats/trapavelliprod1.mp3",
+        }
+        ,
+        {
+        title: "Halftime",
+        artist: "2 chainz",
+        img_src: "../images/halftime.jfif",
+        src: "../beats/halftime Kyrie Prod.mp3",
+        }
+        ,
+        {
+        title: "Let it Go",
+        artist: "2 chainz",
+        img_src: "../images/purplebeach.jpg",
+        src: "../beats/let it go prod.mp3",
+        }
+        ,
+        {
+        title: "Delta Ave",
+        artist: "2 chainz",
+        img_src: "../images/hoh.jpg",
+        src: "../beats/delta ave prod.mp3",
         }
     ]);
     // const shuffle = (arr) => {
@@ -66,7 +78,7 @@ function AudioPlayer(props) {
     
     let randint = getRandomInt(0,songs.length-1);
       
-      useEffect(() => {
+      useEffect(() => { 
         setNextSongIndex(() => {
           if (currentSongIndex + 1 > songs.length - 1) {
             return 0;
@@ -84,17 +96,22 @@ function AudioPlayer(props) {
     const [isPlaying, setIsPlaying] = useState(false);
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
+    const [end, setEnd] = useState(0);
     
     //references
     const audioPlayer = useRef(); //reference our audio component
     const progressBar = useRef(); //reference to our slider
     const animationRef = useRef(); //references animation of slider
     
-    useEffect(() => {
+    useEffect(() => { //takes a function as its first parameter, array as second parameter function is what we want it to do
         const seconds = Math.floor(audioPlayer.current.duration);
-        setDuration (seconds);
-        progressBar.current.max = seconds; 
-    }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
+        setDuration (seconds); //coming from variable set 1 line above ^
+        progressBar.current.max = seconds;
+        
+          //current is referencing current item in our reference, max is a built in property on our input range
+    }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState, currentTime,isPlaying]); //array tells us when it wants us to run use effect if we dont use this 
+    //it will run every single time component refreshes, empty array only runs once.  seems like once, but problem is audio file may have not loaded
+    //audioplayer exists, current exists updated when loadedmetadata is available, do same with readystate tells us when its loaded as well 
 
     const calculateTime = (secs) => {
         const minutes = Math.floor(secs / 60);
@@ -103,6 +120,32 @@ function AudioPlayer(props) {
         const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
         return `${returnedMinutes}:${returnedSeconds}`;
       }
+
+    // const maxTime = (end) => {
+    //     const playTime = end;
+    //     return (playTime);
+    // }  
+    // const endSlider = (duration) => {
+    //     if(duration === Number(audioPlayer.current.currentTime)) {
+    //         return SkipSong;
+    //     }
+    //     else {
+    //         return (false);
+    //     }
+    // }
+
+
+    useEffect(() => {
+        if(currentSongIndex === 1 && currentTime === 0){
+            audioPlayer.current.play();
+            setIsPlaying(false);
+        }
+        else { 
+            audioPlayer.current.play();
+            setIsPlaying(true);
+        }
+        }, [duration]); // for going to next song after duration changes
+
 
     const togglePlayPause = () => {
         const prevValue = isPlaying; //grabs state outside so that play button doesn't break from useffect being asyncronous
@@ -122,7 +165,6 @@ const whilePlaying = () => { //these two functions could be abstracted but first
     progressBar.current.value = audioPlayer.current.currentTime;
     changePlayerCurrentTime();
     animationRef.current = requestAnimationFrame(whilePlaying);
-    
 }
 
 const changeRange = () => {
@@ -141,7 +183,7 @@ const backButton = () => {
 }
 
 const forwardButton = () => {
-    progressBar.current.value = Number(progressBar.current.max);
+    progressBar.current.value = Number(progressBar.current.max); 
     changeRange();
     
 }
@@ -156,7 +198,6 @@ const SkipSong = (forwards = true) => {
             if (temp > songs.length - 1) {
                 temp = 0;
             }
-
             return temp;
         });
     } else {
@@ -172,13 +213,67 @@ const SkipSong = (forwards = true) => {
         });
     }
 }
-    
 
-const durationChecker = (seconds) => {
-    if(seconds = songs[currentSongIndex].duration ) {
-        SkipSong(true);
+const backSong = (backwards = true) => {
+    if (backwards) {
+        setCurrentSongIndex(() => {
+            let temp = currentSongIndex
+            temp--;
+
+            if (temp < 0) {
+                temp = songs.length-1;
+            }
+            return temp;
+        });
+    } else {
+        setCurrentSongIndex(() => {
+            let temp = currentSongIndex;
+            temp++;
+
+            if (temp < 0) {
+                temp = songs.length - 1;
+            }
+
+            return temp;
+        });
     }
-}    
+}
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
+// const autoPlay = async (letsgo = true) => {
+//     if (letsgo) {
+//         console.log('uhaveaids')
+//         await delay(1000);
+//          togglePlayPause(); togglePlayPause(); togglePlayPause();
+//     }
+//     else {
+//         return;
+//     }
+// }
+
+
+useEffect(() => { //takes a function as its first parameter, array as second parameter function is what we want it to do
+    if ( calculateTime(currentTime) === calculateTime(duration)) {
+        console.log('ebola');
+        SkipSong(true);  
+    } else {
+        console.log('penis');
+    }
+   //current is referencing current item in our reference, max is a built in property on our input range
+}, [currentTime]);
+
+
+
+// useEffect(() => {
+//     if ( calculateTime(currentTime) === calculateTime(duration)) {
+//         console.log('chronski')
+//         autoPlay(true);
+//     }
+//     else {
+//         console.log('ovalemano');
+//     }  
+// }, [currentSongIndex]);    
+
 
 
 // const musicSelector = () => {
@@ -200,23 +295,24 @@ const durationChecker = (seconds) => {
             Now Playing: {songs[currentSongIndex].title}
             </div>
 
-            <button className = "forwardbackward" onClick = {backButton} > 
-            <BsArrowLeftShort/> 15 
+
+
+            <button className = "forwardbackward" onClick = {()=> { backSong(); setIsPlaying(true); }} > 
+            <IoMdSkipBackward/>  
             
             </button>
             
-            <button onClick ={togglePlayPause} className = "playpause" > 
-            { isPlaying ? <GrPauseFill/> : <GrPlayFill className = "play"/> } 
+            <button onClick ={togglePlayPause} className = "playpause"  > 
+            { isPlaying?  <GrPauseFill className = "pause"/> : <GrPlayFill className = "play"/> } 
+            
             </button>
 
-            <button className = "forwardbackward" onClick = {()=> {togglePlayPause(); forwardButton();  }}  > 
-                <BsArrowRightShort/>
-                //SkipSong();
+            <button className = "forwardbackward" onClick = {()=> { SkipSong(); setIsPlaying(true) }}  > 
+                <IoMdSkipForward/>
             </button> 
             
             <div className = "currenttime" > 
             {calculateTime(currentTime)} 
-            
             </div>
 
             <div> 

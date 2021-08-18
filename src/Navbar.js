@@ -38,8 +38,9 @@ function Navbar() {
                          MAA Beats  
                         </a> */}
                         <a href='http://localhost:3000/' className= 'logopic' >
-                            <GiLion/>  
+                            "<GiLion/> Logo"
                         </a>
+
                         {/* <a className ={click ? 'BurgerChange' : 'BurgerMenu'} onClick={handleClick} >
                              { click ? <GoX/> : <GiHamburgerMenu/> }
                         </a> */}
@@ -53,16 +54,16 @@ function Navbar() {
                           <div className= 'nav-item'>
                           
                           <a href = 'http://localhost:3000/beats' className={click ? 'Beats' : 'Not-Beats' } onClick={handleClick}>
-                              Beats 
+                              About 
                             </a>
-                            <a href = 'http://localhost:3000/pricing' className={click ? 'Pricing' : 'Not-Pricing' } onClick={handleClick}>
+                            {/* <a href = 'http://localhost:3000/pricing' className={click ? 'Pricing' : 'Not-Pricing' } onClick={handleClick}>
                               Pricing  
-                            </a>
+                            </a> */}
                             <a className ={click ? 'BurgerChange' : 'BurgerMenu'} onClick={handleClick} >
                              { click ? <GoX/> : <GiHamburgerMenu/> }
                             </a>
                             <a href='http://localhost:3000/' className= {click ? 'whitetlname' : 'tlname'} >
-                         MAA Beats  
+                         "Producer Name Here"  
                         </a>
                           </div>  
                         </h1>

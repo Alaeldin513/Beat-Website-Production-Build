@@ -73,8 +73,8 @@
     top: -10;
     left: 10px;
     cursor: pointer;
-    font-size: 10rem;
-    transform: translate(0%, 75%);
+    font-size: 5rem;
+    transform: translate(7%, 150%);
     background: none;
     color: rgb(235, 157, 13);
     display: flex;
@@ -132,7 +132,7 @@
   .Not-Beats {
     background: transparent;
     color: transparent;
-    click: none;
+    
     transform: translate(-100rem, -200rem);
   }
   .Beats:hover {
@@ -154,7 +154,7 @@
   .Not-Pricing {
     background: transparent;
     color: transparent;
-    click: none;
+    
     transform: translate(-100rem, -200rem);
   }
   .Pricing:hover {
@@ -247,7 +247,7 @@
 
 
   
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 750px) {
     .menu-icon {
       position: relative;
     }
@@ -313,7 +313,7 @@
     }
 
     .Beats {
-      font-size: 3rem;
+      font-size: 2.8rem;
       background: none;
       position: absolute;
       top: 50%;
@@ -323,7 +323,7 @@
       color: white;
     }
     .Pricing {
-      font-size: 3rem;
+      font-size: 2.8rem;
       background: none;
       position: absolute;
       top: 50%;
@@ -332,19 +332,55 @@
       text-decoration: none;
       color: white;
     }
-    .whitetlname {
+    
+    .logopic {
       z-index: 6;
       position: absolute;
       justify-self: start;
-      top: -20%;
-      left: 0;
+      top: 1.5%;
+      left: 10px;
       cursor: pointer;
-      font-size: 1.8rem;
-      transform: translate(25%, 50%);
+      font-size: 2.5rem;
       background: none;
-      color: white;
+      color: rgb(235, 157, 13);
       display: flex;
       text-decoration: none;
       align-items: center;
     }
+
+
+  }
+
+  .tlname {
+    z-index: 6;
+    position: absolute;
+    justify-self: start;
+    top: -2%;
+    left: 0%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transform: translate(25%, 50%);
+    background: none;
+    color: black;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    text-decoration: none;
+    
+  }
+
+  .whitetlname {
+    z-index: 6;
+    position: absolute;
+    justify-self: start;
+    top: -20%;
+    left: 0%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transform: translate(25%, 50%);
+    background: none;
+    color: white;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
   }
