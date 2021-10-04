@@ -1,0 +1,117 @@
+
+
+
+.starterText {
+    font-size: 1.5rem;
+    background: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-decoration: none;
+    transform: translate(-9.1rem, -1550%);
+    color:  #242222;
+    z-index:2;
+}
+
+.starterText2 {
+    font-size: 1.5rem;
+    background: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-decoration: none;
+    transform: translate(-8.1rem, -1400%);
+    color:  #242222;
+    z-index:2;
+    
+}
+
+.starterText3 {
+    font-size: 2rem;
+    background: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-decoration: none;
+    transform: translate(-3.1rem, -900%);
+    color:  #242222;
+    font-family:fangsong;
+    font-style: italic;
+    font-family: Brush Script MT;
+    color: red;
+    z-index:2;
+    
+}
+
+.starterText4 {
+    font-size: 1.8rem;
+    background: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-decoration: none;
+    transform: translate(-8.6rem, 300);
+    color:  #242222;
+    font-family: papyrus;
+    color: purple;
+    z-index:2;
+   
+}
+
+@media screen and (max-width: 750px) {
+   
+    .starterText {
+        font-size: 1rem;
+        background: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-decoration: none;
+        transform: translate(-55%, -1500%);
+        color:  #242222;
+        z-index:2;
+    }
+    
+    .starterText2 {
+        font-size: 1rem;
+        background: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-decoration: none;
+        transform: translate(-55%, -1375%);
+        color:  #242222;
+        z-index: 2;
+    }
+    
+    .starterText3 {
+        font-size: 1rem;
+        background: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-decoration: none;
+        transform: translate(-55%, -1200%);
+        color:  #242222;
+        font-family:fangsong;
+        font-style: italic;
+        font-family: Brush Script MT;
+        color: red;
+        z-index: 2;
+    }
+    
+    .starterText4 {
+        font-size: 1rem;
+        background: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-decoration: none;
+        transform: translate(-45%, 400%);
+        color:  #242222;
+        font-family: 'gotham.md';
+        color: purple;
+        z-index: 2;
+        background: white;
+    }
+}

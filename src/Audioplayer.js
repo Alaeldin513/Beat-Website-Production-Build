@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect, useMemo} from 'react'
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 import './Audioplayer.css';
 import {IoMdSkipBackward} from 'react-icons/io'
@@ -56,6 +57,56 @@ function AudioPlayer(props) {
         img_src: "../images/hoh.jpg",
         src: "../beats/delta ave prod.mp3",
         }
+        ,
+        {
+        title: "Riding out",
+        artist: "2 chainz",
+        img_src: "../images/kfc.jfif",
+        src: "../beats/Riding out.mp3",
+        }        ,
+        {
+        title: "Rako",
+        artist: "2 chainz",
+        img_src: "../images/rako.jpg",
+        src: "../beats/Rako.mp3",
+        }        ,
+        {
+        title: "Get it",
+        artist: "2 chainz",
+        img_src: "../images/get.jpg",
+        src: "../beats/Get.mp3",
+        }        ,
+        {
+        title: "42 Dugg",
+        artist: "2 chainz",
+        img_src: "../images/piano.jfif",
+        src: "../beats/dugg.mp3",
+        }
+        ,
+        {
+        title: "KISS",
+        artist: "2 chainz",
+        img_src: "../images/kiss.jpeg",
+        src: "../beats/KISS1 G prod.mp3",
+        }        ,
+        {
+        title: "Void",
+        artist: "2 chainz",
+        img_src: "../images/void.jpeg",
+        src: "../beats/void prod.mp3",
+        }        ,
+        {
+        title: "Ronald Reagan Era",
+        artist: "2 chainz",
+        img_src: "../images/ronaldreagan.jpeg",
+        src: "../beats/ronald reagan prod.mp3",
+        }        ,
+        {
+        title: "You Ain't Ever",
+        artist: "2 chainz",
+        img_src: "../images/youaintever.jpeg",
+        src: "../beats/you ain't ever prod.mp3",
+        }
     ]);
     // const shuffle = (arr) => {
     //     for (let i = songs.length - 1; i > 0; i--) {
@@ -96,7 +147,7 @@ function AudioPlayer(props) {
     const [isPlaying, setIsPlaying] = useState(false);
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
-    const [end, setEnd] = useState(0);
+    
     
     //references
     const audioPlayer = useRef(); //reference our audio component
@@ -283,6 +334,7 @@ useEffect(() => { //takes a function as its first parameter, array as second par
     return (
         //working below this line
         <div className = "Audioplayer">
+            <Link href = 'https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css' rel = "sytlesheet" />
             <audio src = {songs[currentSongIndex].src} ref = {audioPlayer} preload = "metadata" >
             //'../beats/trapavelliprod.mp3'
             console.log(props.songs[props.currentSongIndex].src)

@@ -132,9 +132,47 @@
   .Not-Beats {
     background: transparent;
     color: transparent;
-    
+    pointer-events: none;
     transform: translate(-100rem, -200rem);
   }
+  .Beatpage {
+    font-size: 3rem;
+    background: none;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    text-decoration: none;
+    transform: translate(-3.1rem, 23rem);
+    color: white;
+    }
+   
+     .Not-Beatpage {
+       background: transparent;
+       color: transparent;
+       pointer-events: none;
+       transform: translate(-100rem, -200rem);
+     }
+
+     .Songs {
+      font-size: 3rem;
+      background: none;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      text-decoration: none;
+      transform: translate(-3.1rem, 28rem);
+      color: white;
+      }
+     
+       .Not-Songs {
+         background: transparent;
+         color: transparent;
+         pointer-events: none;
+         transform: translate(-100rem, -200rem);
+       }   
+
+
+
   .Beats:hover {
     border-bottom: 4px solid rgb(163, 37, 146);
     transition: all 0.2s ease-out;
@@ -154,7 +192,7 @@
   .Not-Pricing {
     background: transparent;
     color: transparent;
-    
+    pointer-events: none;
     transform: translate(-100rem, -200rem);
   }
   .Pricing:hover {
@@ -224,7 +262,6 @@
     opacity: 1;
     transition: all 0.5s ease;
    background: white;
-   z-index: -1;
   }
 
   .nav-menu.active {
@@ -271,7 +308,7 @@
       left: 0%;
       opacity: 1;
       transition: all 0.5s ease;
-     
+     z-index:1;
     }
   
     .nav-menu.active {
@@ -279,7 +316,7 @@
       left: 0;
       opacity: 1;
       transition: all 0.5s ease;
-      z-index: 1;
+      z-index: 5;
     }
    
 
@@ -322,6 +359,49 @@
       transform: translate(-3.1rem, 18rem);
       color: white;
     }
+      .Not-Beats {
+        background: transparent;
+        color: transparent;
+        z-index:5;
+        transform: translate(-100rem, -200rem);
+        pointer-events: none;
+      }
+      .Beatpage {
+        font-size: 3rem;
+        background: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-decoration: none;
+        transform: translate(-3.1rem, 23rem);
+        color: white;
+        }
+       
+         .Not-Beatpage {
+           background: transparent;
+           color: transparent;
+           pointer-events: none;
+           transform: translate(-100rem, -200rem);
+         }
+         .Songs {
+          font-size: 3rem;
+          background: none;
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          text-decoration: none;
+          transform: translate(-3.1rem, 28rem);
+          color: white;
+          }
+         
+           .Not-Songs {
+             background: transparent;
+             color: transparent;
+             pointer-events: none;
+             transform: translate(-100rem, -200rem);
+           }  
+
+
     .Pricing {
       font-size: 2.8rem;
       background: none;
