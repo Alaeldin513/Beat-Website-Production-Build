@@ -51,16 +51,17 @@ function Navbar() {
                           </a> */}
 
                         <h1 className={click ? 'nav-menu active' : 'nav-menu'}>
+                      <Link href = "www.google.com" > 
+                        <div className= 'nav-item' >
                           
-                          <div className= 'nav-item'>
-                          
+
                           <Link to = "/about">
                           <a className={click ? 'Beats' : 'Not-Beats' } onClick={handleClick} >
                               About 
                           </a>
                           </Link>
 
-                          {/* <Link to = "/beats">
+                          <Link to = "/beats">
                           <a className={click ? 'Beatpage' : 'Not-Beatpage' } onClick={handleClick} >
                               Beats 
                           </a>
@@ -71,7 +72,7 @@ function Navbar() {
                               Songs/
                               <br/>Collab 
                           </a>
-                          </Link> */}
+                          </Link>
 
 
                             {/* <a href = 'http://localhost:3000/pricing' className={click ? 'Pricing' : 'Not-Pricing' } onClick={handleClick}>
@@ -83,7 +84,8 @@ function Navbar() {
                           <a href='/' className= {click ? 'whitetlname' : 'tlname'} >
                          "Producer Name Here"  
                           </a>
-                          </div>  
+                          </div>
+                          </Link>  
                         </h1>
                         {/* <div className = 'hamburger' onClick={handleClick}>
                             <i className = {click ? 'fas fa-times' : 'fas fa-bars'} 

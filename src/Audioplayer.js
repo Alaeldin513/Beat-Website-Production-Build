@@ -7,13 +7,15 @@ import {IoMdSkipForward} from 'react-icons/io'
 import {GrPlayFill} from 'react-icons/gr'
 import {GrPauseFill} from 'react-icons/gr'
 
+//includes audioplayer functionality and all songs that are necessary to load
+
 
 function AudioPlayer(props) {
     
     const [songs] = useState([
         {
             title: "The Funk",
-            artist: "2 chainz",
+            artist: "2 chainzprogra",
             img_src: "../images/fire.jpg",
             src: "../beats/the funk prod.mp3",
         },
@@ -117,8 +119,18 @@ function AudioPlayer(props) {
 
 
     
-      const [currentSongIndex, setCurrentSongIndex] = useState(0);
-      const [nextSongIndex, setNextSongIndex] = useState(0);
+    const [currentSongIndex, setCurrentSongIndex] = useState(0);
+    const [nextSongIndex, setNextSongIndex] = useState(0);
+    //state
+
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [duration, setDuration] = useState(0);
+    const [currentTime, setCurrentTime] = useState(0);
+
+    //references
+    const audioPlayer = useRef(); //reference our audio component
+    const progressBar = useRef(); //reference to our slider
+    const animationRef = useRef(); //references animation of slider
     
       function getRandomInt(min, max) {
         min = Math.ceil(min);
@@ -128,31 +140,22 @@ function AudioPlayer(props) {
       }
     
     let randint = getRandomInt(0,songs.length-1);
+
       
       useEffect(() => { 
         setNextSongIndex(() => {
           if (currentSongIndex + 1 > songs.length - 1) {
             return 0;
           } else {
-            return currentSongIndex + 1;   
-            //currentSongIndex = getRandomInt(0,songs.length) 
+            return currentSongIndex +1;   
+             
               // return currentSongIndex;
             }    
         });
       }, [currentSongIndex]);
 
 
-    //state
 
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [duration, setDuration] = useState(0);
-    const [currentTime, setCurrentTime] = useState(0);
-    
-    
-    //references
-    const audioPlayer = useRef(); //reference our audio component
-    const progressBar = useRef(); //reference to our slider
-    const animationRef = useRef(); //references animation of slider
     
     useEffect(() => { //takes a function as its first parameter, array as second parameter function is what we want it to do
         const seconds = Math.floor(audioPlayer.current.duration);
@@ -188,14 +191,14 @@ function AudioPlayer(props) {
 
     useEffect(() => {
         if(currentSongIndex === 1 && currentTime === 0){
-            audioPlayer.current.play();
-            setIsPlaying(false);
+            // audioPlayer.current.play();
+             setIsPlaying(false);
         }
         else { 
             audioPlayer.current.play();
             setIsPlaying(true);
         }
-        }, [duration]); // for going to next song after duration changes
+        }, [duration,currentSongIndex]); // for going to next song after duration changes
 
 
     const togglePlayPause = () => {
@@ -289,18 +292,6 @@ const backSong = (backwards = true) => {
         });
     }
 }
-const delay = ms => new Promise(res => setTimeout(res, ms));
-
-// const autoPlay = async (letsgo = true) => {
-//     if (letsgo) {
-//         console.log('uhaveaids')
-//         await delay(1000);
-//          togglePlayPause(); togglePlayPause(); togglePlayPause();
-//     }
-//     else {
-//         return;
-//     }
-// }
 
 
 useEffect(() => { //takes a function as its first parameter, array as second parameter function is what we want it to do
@@ -308,36 +299,20 @@ useEffect(() => { //takes a function as its first parameter, array as second par
         console.log('ebola');
         SkipSong(true);  
     } else {
-        console.log('penis');
+        console.log('john');
     }
    //current is referencing current item in our reference, max is a built in property on our input range
 }, [currentTime]);
 
 
 
-// useEffect(() => {
-//     if ( calculateTime(currentTime) === calculateTime(duration)) {
-//         console.log('chronski')
-//         autoPlay(true);
-//     }
-//     else {
-//         console.log('ovalemano');
-//     }  
-// }, [currentSongIndex]);    
 
-
-
-// const musicSelector = () => {
-//     var Answer = props => 
-//     <select>{props.data.map((x,y) => <option key={y}>{x}</option>)}</select>;
-// } 
     return (
         //working below this line
         <div className = "Audioplayer">
             <Link href = 'https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css' rel = "sytlesheet" />
             <audio src = {songs[currentSongIndex].src} ref = {audioPlayer} preload = "metadata" >
-            //'../beats/trapavelliprod.mp3'
-            console.log(props.songs[props.currentSongIndex].src)
+
             </audio>
 
             <img className ="songPhoto" src = {songs[currentSongIndex].img_src} >

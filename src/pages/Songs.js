@@ -9,15 +9,27 @@ export default function Songs() {
 
 
     return(
-        <div>
+
+        
+        <div className = "mainBox">
             
+        <div className = 'songssMenu'>
+
+        </div> 
+
+
+
+
+
+   
 
 
 
 
 
 
-        </div>
+    </div>
+
 
         );
     

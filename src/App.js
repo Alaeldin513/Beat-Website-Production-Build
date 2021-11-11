@@ -19,6 +19,7 @@ function App() {
           <Route path ='/about' component = {About} />
           <Route path = '/beats' component = {Beats} />
           <Route path = '/songs' component = {Songs} />
+          
 
 
 

@@ -1,7 +1,7 @@
 .Audioplayer {
     --primary: purple;
     --secondary: orangered;
-    z-index:1;
+    z-index:0;
     display: flex;
     font-size: 4rem;
     background: none;
@@ -47,11 +47,11 @@
 .play {
     position: relative;
     left: 2px;
-    z-index: 2;
+    z-index: 0;
 }
 .pause {
     position: relative;
-    z-index: 2;
+    z-index: 0;
     
 }
 
@@ -126,7 +126,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 0;
     cursor: pointer;
 }
 
@@ -149,7 +149,7 @@
     cursor: pointer;
     position: relative;
     margin: -2px 0 0 0;
-    z-index: 3;
+    z-index: 0;
     box-sizing: border-box;
 }
 
@@ -167,7 +167,7 @@
     background-color: var(--knobby);
     cursor: pointer;
     position: relative;
-    z-index: 3;
+    z-index: 0;
     box-sizing: border-box;
 }
 
@@ -187,7 +187,7 @@
  color: purple;
  font-family: Papyrus ;
  width: 100vh;
- z-index:3;
+ z-index:0;
 }
 .duration {
     font-family: monospace;
@@ -213,9 +213,9 @@
  background: none;
  position: absolute;
  top: 50%;
- left: 50%;
+ left: 32%;
  text-decoration: none;
- transform: translate(-9.5%, 7rem);
+ transform: translate(-9.5%, 333%);
  color: rgb(185, 0, 185);
  font-family: 'gotham.md';
  width: 100vh;
@@ -288,7 +288,7 @@ background-color: rgba(255, 255, 255,0);
     display: flex;
     align-items: center;
     overflow: hidden;
-    z-index: 1;
+    z-index: 0;
     
     border-radius: 4%;
 
@@ -334,17 +334,17 @@ background-color: rgba(255, 255, 255,0);
        justify-content: center;
        align-items: center;
        transform: translate(20%,0%);
-       z-index:2;
+       z-index:0;
     }
     
     .play {
         position: relative;
         left: 2px;
-        z-index: 2;
+        z-index: 0;
     }
     .pause {
         position: relative;
-        z-index: 2;
+        z-index: 0;
         
     }
     
@@ -418,7 +418,7 @@ background-color: rgba(255, 255, 255,0);
     transform: translate(-62%, 55%);
     text-decoration: none;
     color: white;
-    z-index: 1;
+    z-index: 0;
   }
 
   .songPhoto {
@@ -427,7 +427,7 @@ background-color: rgba(255, 255, 255,0);
     display: flex;
     align-items: center;
     
-    z-index: 4;
+    z-index: 0;
     
     border-radius: 4%;
 

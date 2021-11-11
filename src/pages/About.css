@@ -47,13 +47,13 @@
     font-size: 1.8rem;
     background: none;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 80%;
+    left: 25%;
     text-decoration: none;
-    transform: translate(-8.6rem, 300);
+    
     color:  #242222;
-    font-family: papyrus;
-    color: purple;
+    font-family: 'gotham.md';
+    color: rgb(211, 0, 211);
     z-index:2;
    
 }
@@ -110,7 +110,7 @@
         transform: translate(-45%, 400%);
         color:  #242222;
         font-family: 'gotham.md';
-        color: purple;
+        color: rgb(211, 0, 211);
         z-index: 2;
         background: white;
     }

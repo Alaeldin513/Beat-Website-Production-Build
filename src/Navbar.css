@@ -18,10 +18,6 @@
   outline: none;
 }
 
-
-
-
-
   .tlname {
     z-index: 6;
     position: absolute;
@@ -127,6 +123,7 @@
  text-decoration: none;
  transform: translate(-3.1rem, 18rem);
  color: white;
+
  }
 
   .Not-Beats {
@@ -269,14 +266,16 @@
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
-    z-index: 0;
+    z-index: 5;
     width: 100%;
+    height: 100%;
   }
 
   .nav-item {
     position: relative;
     display: grid;
     align-items: center;
+    z-index: 2;
   }
   .menu-icon {
     position: relative;
@@ -292,6 +291,9 @@
       position: relative;
       display: grid;
       align-items: center;
+      height:0;
+      
+
     }
 
     .NavbarItems {
@@ -308,7 +310,7 @@
       left: 0%;
       opacity: 1;
       transition: all 0.5s ease;
-     z-index:1;
+     z-index:0
     }
   
     .nav-menu.active {
@@ -349,6 +351,18 @@
       font-size: 4rem;
     }
 
+    .About {
+      position: absolute;
+      top: 0;
+      right: 2rem;
+      transform: translate(25%, 50%);
+      background: none;
+      align-items: flex-end;
+      display: inline-block;
+      text-decoration: none;
+      height:0;
+    }
+
     .Beats {
       font-size: 2.8rem;
       background: none;
@@ -358,6 +372,8 @@
       text-decoration: none;
       transform: translate(-3.1rem, 18rem);
       color: white;
+      height:0;
+      
     }
       .Not-Beats {
         background: transparent;
@@ -365,6 +381,7 @@
         z-index:5;
         transform: translate(-100rem, -200rem);
         pointer-events: none;
+        height: 0;
       }
       .Beatpage {
         font-size: 3rem;
@@ -375,6 +392,8 @@
         text-decoration: none;
         transform: translate(-3.1rem, 23rem);
         color: white;
+        height:0;
+      
         }
        
          .Not-Beatpage {
@@ -382,6 +401,7 @@
            color: transparent;
            pointer-events: none;
            transform: translate(-100rem, -200rem);
+           height: 0;
          }
          .Songs {
           font-size: 3rem;
@@ -398,6 +418,7 @@
              background: transparent;
              color: transparent;
              pointer-events: none;
+             z-index: -50;
              transform: translate(-100rem, -200rem);
            }  
 
