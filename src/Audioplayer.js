@@ -198,7 +198,7 @@ function AudioPlayer(props) {
             audioPlayer.current.play();
             setIsPlaying(true);
         }
-        }, [duration,currentSongIndex]); // for going to next song after duration changes
+        }, [currentSongIndex]); // for going to next song after duration changes
 
 
     const togglePlayPause = () => {
@@ -319,7 +319,9 @@ useEffect(() => { //takes a function as its first parameter, array as second par
             </img>   
 
             <div className = "currentlyPlaying" >
-            Now Playing: {songs[currentSongIndex].title}
+            Now Playing: 
+            <br />
+            {songs[currentSongIndex].title}
             </div>
 
 

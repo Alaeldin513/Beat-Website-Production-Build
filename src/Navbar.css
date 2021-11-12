@@ -197,10 +197,6 @@
     transition: all 0.2s ease-out;
   }
 
-
-
-
-
   .About {
     position: absolute;
     top: 0;
@@ -211,7 +207,6 @@
     display: inline-block;
     text-decoration: none;
   }
-
 
   .BurgerMenu {
     position: absolute;
@@ -284,6 +279,11 @@
 
   
   @media screen and (max-width: 750px) {
+    .navbar {
+      height: 100%;
+      width: 100%;
+    }
+    
     .menu-icon {
       position: relative;
     }

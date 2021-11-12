@@ -1,9 +1,10 @@
 .Audioplayer {
     --primary: purple;
-    --secondary: orangered;
+    opacity: 1;
+    --secondary: black;
     z-index:0;
     display: flex;
-    font-size: 4rem;
+    
     background: none;
     position: absolute;
     top: 50%;
@@ -176,19 +177,18 @@
     background: var(--selectedKnobby);
 }
 
-.currentlyPlaying {
-    font-size: 2rem;
- background: none;
- position: absolute;
- top: 50%;
- left: 50%;
- text-decoration: none;
- transform: translate(-11rem, 4rem);
- color: purple;
- font-family: Papyrus ;
- width: 100vh;
- z-index:0;
+.songPhoto {
+    position: absolute;
+    border-radius: 4%;
+    display: inline-block;
+    height: 200px;
+    width: 220% !important;
+        top: 50%;
+        left: 50%;
+        text-decoration: none;
+        transform: translate(-45%, -18rem);
 }
+
 .duration {
     font-family: monospace;
     font-size: 16px;
@@ -210,15 +210,22 @@
 
 .currentlyPlaying {
     font-size: 1.89rem;
+    width:100%;
+    border: none;
  background: none;
  position: absolute;
- top: 50%;
- left: 32%;
+ top: 250%;
+ left: -350%;
  text-decoration: none;
- transform: translate(-9.5%, 333%);
  color: rgb(185, 0, 185);
  font-family: 'gotham.md';
  width: 100vh;
+ text-align: center;
+ display: inline-block;
+
+ 
+ padding: 0;
+ 
 }
 .songsLeft{
     font-size: 1.89rem;
@@ -262,50 +269,22 @@
 
 
 
-/* .songPhoto {
-
-
-z-index: 10;    
-position:relative;
-color:rgba(22, 21, 21, 0.479);
-
-
-
-transform: (-10vh, 0);
-display: flex;
-flex-direction: column;
-justify-content:  center;
-align-items: center;
-box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.2);
-object-fit: contain;
-background-color: rgba(255, 255, 255,0);
-} */
-
-
-.songPhoto {
-    position:relative;
-    width: 75%;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    z-index: 0;
-    
-    border-radius: 4%;
-
-    height: 200px;
-    display:block;
-    margin-left: auto;
-    margin-right: auto;  
-       
+@media screen and (max-width: 800px) {
+    .Audioplayer {
+        --primary: purple;
+        --secondary: orangered;
+        z-index:1;
+        display: flex;
+        background: none;
         position: absolute;
         top: 50%;
         left: 50%;
+        /* transform: translate(-62%, 55%); */
         text-decoration: none;
-
-        transform: translate(-10.5rem, -18rem);
-}
-
-@media screen and (max-width: 800px) {
+        color: white;
+        z-index: 0;
+      }
+   
     .forwardbackward {
         background: none;
         border: none;
@@ -314,7 +293,9 @@ background-color: rgba(255, 255, 255,0);
         font-family: monospace;
         font-size: 16px;
         cursor: pointer;
-        transform: translate(52.5%,0%);
+        position: relative;
+        left: 0%;
+        
     }
     
     .forwardbackward:hover {
@@ -324,27 +305,28 @@ background-color: rgba(255, 255, 255,0);
     .playpause {
        background: var(--primary);
        border: none;
-       border-radius: 50%;
+       border-radius: 100%;
        width: 75px;
        height: 75px; 
-       font-size: 40px;
-       
+       font-size: 30px;
+       opacity:0.80;
        color: var(--secondary) !important;
        display: flex;
        justify-content: center;
        align-items: center;
-       transform: translate(20%,0%);
-       z-index:0;
+       /* transform: translate(0%,0%); */
+       
     }
     
     .play {
         position: relative;
         left: 2px;
-        z-index: 0;
+        z-index:1;
+        
     }
     .pause {
         position: relative;
-        z-index: 0;
+        z-index: 1;
         
     }
     
@@ -354,31 +336,38 @@ background-color: rgba(255, 255, 255,0);
         color: black;
         position: absolute;
         top: 160%;
-        left: 112%;
+        left: 108%;
         font-family: 'gotham.md';
     }
     .currenttime {
         background: none;
         position: absolute;
         top: 160%;
-        left: -30%;
+        left: -5%;
         text-decoration: none;
         font-family: 'gotham.md';
     
     }
     .currentlyPlaying {
-        font-size: 1.89rem;
+     font-size: 1.89rem;
+     width: 250px;
+     appearance:none;
      background: none;
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     text-decoration: none;
-     transform: translate(-16%, 7rem);
+     position:absolute;
+     overflow: hidden;
+     outline: none;
+     top: 225%;
      color: rgb(185, 0, 185);
      font-family: 'gotham.md';
-     width: 100vh;
-     z-index:2;
+     margin-right: 0%;
+     border: 0%;
+     display: inline-block;
+     justify-content: center;
+     align-items: center;
+     padding: 0;
+     left: -33%
     }
+
     .progressbar {
      --bar-bg: rgb(211, 0, 211);
      --seek-before-width: 0;
@@ -389,8 +378,7 @@ background-color: rgba(255, 255, 255,0);
      appearance: none;
      background: var(--bar-bg);
      border-radius: 0;
-     position: relative;
-     width: 165%;
+     width: 180%;
      height: 11px;
      outline: none;
     
@@ -398,47 +386,22 @@ background-color: rgba(255, 255, 255,0);
      background: none;
      position: absolute;
      top: -65%;
-     left: 67%;
+     /* left: 55%; */
      
      
      color: white;
     }
-}    
-
-.Audioplayer {
-    --primary: purple;
-    --secondary: orangered;
-    z-index:1;
-    display: flex;
     
-    background: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-62%, 55%);
-    text-decoration: none;
-    color: white;
-    z-index: 0;
-  }
-
   .songPhoto {
-    position:relative;
-    width:  200%;
-    display: flex;
-    align-items: center;
-    
-    z-index: 0;
-    
-    border-radius: 4%;
-
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    background-size: cover;
+    width:  33%;
+    border-radius: 33%;
     height: 200px;
-
-     
-       
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        text-decoration: none;
-
-        transform: translate(-45%, -135%);
-}
+    text-decoration: none;
+    
+        /* transform: translate(-45%, -135%); */
+    }
+}    
