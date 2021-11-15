@@ -311,8 +311,8 @@ useEffect(() => { //takes a function as its first parameter, array as second par
         //working below this line
         <div className = "Audioplayer">
             <Link href = 'https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css' rel = "sytlesheet" />
+            
             <audio src = {songs[currentSongIndex].src} ref = {audioPlayer} preload = "metadata" >
-
             </audio>
 
             <img className ="songPhoto" src = {songs[currentSongIndex].img_src} >
@@ -332,7 +332,7 @@ useEffect(() => { //takes a function as its first parameter, array as second par
             </button>
             
             <button onClick ={togglePlayPause} className = "playpause"  > 
-            { isPlaying?  <GrPauseFill className = "pause"/> : <GrPlayFill className = "play"/> } 
+            { isPlaying?  <GrPauseFill className = "pause" /> : <GrPlayFill className = "play" /> } 
             
             </button>
 

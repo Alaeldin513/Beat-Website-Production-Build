@@ -36,7 +36,6 @@ export default function About() {
 
     <div className = "starterText4">
         15 songs and 45 Minutes of freestyle, press play once and it'll run through 'em all
-        BIG Updates coming soon
 
     </div>
 

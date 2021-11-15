@@ -11,10 +11,9 @@
     left: 50%;
     transform: translate(-62%, 55%);
     text-decoration: none;
+    justify-content: center;
     color: white;
   }
-
-
 
 .forwardbackward {
     background: none;
@@ -38,7 +37,6 @@
    width: 75px;
    height: 75px; 
    font-size: 50px;
-   color: var(--secondary) !important;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -67,30 +65,7 @@
     margin-left: 10px;
 }
 
-.progressbar {
- --bar-bg: purple;
- --seek-before-width: 0;
- --seek-before-color: orange;
- --knobby:     blue;
- --selectedKnobby: cyan;
 
- appearance: none;
- background: var(--bar-bg);
- border-radius: 10px;
- position: relative;
- width: 75%;
- height: 11px;
- outline: none;
-
- font-size: 3rem;
- background: none;
- position: absolute;
- top: 50%;
- left: 50%;
- text-decoration: none;
- transform: translate(-8rem, 9rem);
- color: white;
-}
 
 /* Safari styling */
 .progressbar::-webkit-slider-runnable-track {
@@ -215,14 +190,14 @@
  background: none;
  position: absolute;
  top: 250%;
- left: -350%;
+
  text-decoration: none;
  color: rgb(185, 0, 185);
  font-family: 'gotham.md';
  width: 100vh;
  text-align: center;
  display: inline-block;
-
+ transform: translate(0.5rem, 0rem);
  
  padding: 0;
  
@@ -240,8 +215,6 @@
     width: 100vh; 
 }
 
-
-
 .progressbar {
  --bar-bg: purple;
  --seek-before-width: 0;
@@ -253,7 +226,7 @@
  background: var(--bar-bg);
  border-radius: 0;
  position: relative;
- width: 175%;
+ width: 137%;
  height: 11px;
  outline: none;
 
@@ -261,9 +234,9 @@
  background: none;
  position: absolute;
  top: -65%;
- left: 67%;
  
- 
+ text-decoration: none;
+ transform: translate(-9.4rem, 9rem);
  color: white;
 }
 
@@ -294,6 +267,7 @@
         font-size: 16px;
         cursor: pointer;
         position: relative;
+        justify-content: center;
         left: 0%;
         
     }
@@ -309,8 +283,7 @@
        width: 75px;
        height: 75px; 
        font-size: 30px;
-       opacity:0.80;
-       color: var(--secondary) !important;
+       opacity:0.8;
        display: flex;
        justify-content: center;
        align-items: center;
@@ -357,7 +330,7 @@
      overflow: hidden;
      outline: none;
      top: 225%;
-     color: rgb(185, 0, 185);
+     color: rgbrgb(211, 0, 211);
      font-family: 'gotham.md';
      margin-right: 0%;
      border: 0%;
@@ -365,7 +338,7 @@
      justify-content: center;
      align-items: center;
      padding: 0;
-     left: -33%
+     left: -37%
     }
 
     .progressbar {
@@ -378,15 +351,14 @@
      appearance: none;
      background: var(--bar-bg);
      border-radius: 0;
-     width: 180%;
+     width: 150%;
      height: 11px;
      outline: none;
-    
      font-size: 2rem;
      background: none;
      position: absolute;
      top: -65%;
-     /* left: 55%; */
+     transform: translate(-8.9rem, 9rem);
      
      
      color: white;
@@ -397,7 +369,6 @@
     display: inline-block;
     left: 50%;
     background-size: cover;
-    width:  33%;
     border-radius: 33%;
     height: 200px;
     text-decoration: none;

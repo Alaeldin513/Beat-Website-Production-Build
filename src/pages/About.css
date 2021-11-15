@@ -106,8 +106,10 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        width:65%;
+        text-align: center;
         text-decoration: none;
-        transform: translate(-45%, 400%);
+        transform: translate(-50%, 575%);
         color:  #242222;
         font-family: 'gotham.md';
         color: rgb(211, 0, 211);
