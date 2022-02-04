@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Footer() {
   return (
         <div className = 'Footer' >
-             <a href="https://www.freecodecamp.org/" target="_blank"freeCodeCamp >       
+             <a href="https://www.instagram.com/mike18cincy/" target="_blank"freeCodeCamp >       
                     <img 
                     className = 'insta'
                     src = 'images/insta2.png' 
@@ -14,13 +14,13 @@ function Footer() {
                     </img>
               </a>
 
-              <a href="https://www.freecodecamp.org/" target="_blank"freeCodeCamp >
+              {/* <a href="https://www.freecodecamp.org/" target="_blank"freeCodeCamp >
                     <img 
                     className = 'twitter'
                     src = 'images/twitter1.png' 
                     alt='twitter'>
                     </img>
-              </a>
+              </a> */}
 
             </div>
 

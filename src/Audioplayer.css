@@ -1,18 +1,16 @@
 .Audioplayer {
-    --primary: purple;
-    opacity: 1;
-    --secondary: black;
-    z-index:0;
+    --primary: rgb(185, 0, 185);
+    --secondary: orangered;
+    z-index:1;
     display: flex;
-    
     background: none;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-62%, 55%);
-    text-decoration: none;
+    top: 58%;
     justify-content: center;
+    justify-self: center;
+    text-decoration: none;
     color: white;
+    z-index: 0;
   }
 
 .forwardbackward {
@@ -22,7 +20,7 @@
     align-items: center;
     font-family: monospace;
     font-size: 18px;
-    transform: translate(52.5%, 0%);
+    color: black;
     cursor: pointer;
 }
 
@@ -40,7 +38,6 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   transform: translate(20%,0%);
 }
 
 .play {
@@ -53,19 +50,6 @@
     z-index: 0;
     
 }
-
-.currenttime, 
-.duration {
-    font-family: monospace;
-    font-size: 16px;
-    color: black;
-}
-
-.currenttime {
-    margin-left: 10px;
-}
-
-
 
 /* Safari styling */
 .progressbar::-webkit-slider-runnable-track {
@@ -152,17 +136,37 @@
     background: var(--selectedKnobby);
 }
 
-.songPhoto {
+.songPhotoContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+
+}
+
+/* .songPhoto {
     position: absolute;
     border-radius: 4%;
-    display: inline-block;
+    display: block;
     height: 200px;
-    width: 220% !important;
         top: 50%;
-        left: 50%;
         text-decoration: none;
-        transform: translate(-45%, -18rem);
-}
+        transform: translate(0%, -18rem);
+        justify-content: center;
+        align-items: center;
+} */
+.songPhoto {
+    display: flex;
+    background-size: cover;
+    border-radius: 1%;
+    height: 200px;
+    width: 300px;
+    text-decoration: none;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: -232px;
+    }
+
 
 .duration {
     font-family: monospace;
@@ -170,14 +174,17 @@
     color: black;
     position: absolute;
     top: 160%;
-    left: 107%;
+    left: 110%;
     font-family: 'gotham.md';
 }
 .currenttime {
+    font-family: monospace;
+    font-size: 16px;
+    color: black;
     background: none;
     position: absolute;
     top: 160%;
-    left: -30%;
+    left: -38%;
     text-decoration: none;
     font-family: 'gotham.md';
 
@@ -189,18 +196,17 @@
     border: none;
  background: none;
  position: absolute;
- top: 250%;
-
+ display: flex;
+bottom: 0;
  text-decoration: none;
- color: rgb(185, 0, 185);
+ color: rgb(211, 0, 211);
  font-family: 'gotham.md';
- width: 100vh;
+ width: 30vh;
  text-align: center;
  display: inline-block;
- transform: translate(0.5rem, 0rem);
- 
+ letter-spacing: 0.5px; 
  padding: 0;
- 
+ transform: translate(0,163px)
 }
 .songsLeft{
     font-size: 1.89rem;
@@ -210,13 +216,24 @@
     left: 50%;
     text-decoration: none;
     transform: translate(-6%, 10rem);
-    color: purple;
+    color: rgb(185, 0, 185);
     font-family: 'gotham.md';
     width: 100vh; 
 }
 
+/* .progressBarContainer {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+
+    position: absolute;
+    display: inline-block;
+} */
+
 .progressbar {
- --bar-bg: purple;
+ --bar-bg: rgb(211, 0, 211);
  --seek-before-width: 0;
  --seek-before-color: orange;
  --knobby:     blue;
@@ -226,38 +243,35 @@
  background: var(--bar-bg);
  border-radius: 0;
  position: relative;
- width: 137%;
+ /* width: 100%; */
  height: 11px;
  outline: none;
 
  font-size: 2rem;
  background: none;
  position: absolute;
- top: -65%;
- 
+ justify-content: center;
+ align-items:center;
  text-decoration: none;
- transform: translate(-9.4rem, 9rem);
  color: white;
+ top: 105px;
+ width: 175%;
+
 }
 
-
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+    .Audioplayer {
+        transform: translate(0, 0px);
+    }
+}
 
 @media screen and (max-width: 800px) {
     .Audioplayer {
-        --primary: purple;
-        --secondary: orangered;
-        z-index:1;
-        display: flex;
-        background: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        /* transform: translate(-62%, 55%); */
-        text-decoration: none;
-        color: white;
-        z-index: 0;
-      }
-   
+        transform: translate(0, 0px);
+    }
+
+
+
     .forwardbackward {
         background: none;
         border: none;
@@ -302,77 +316,32 @@
         z-index: 1;
         
     }
-    
-    .duration {
-        font-family: monospace;
-        font-size: 16px;
-        color: black;
-        position: absolute;
-        top: 160%;
-        left: 108%;
-        font-family: 'gotham.md';
-    }
-    .currenttime {
-        background: none;
-        position: absolute;
-        top: 160%;
-        left: -5%;
-        text-decoration: none;
-        font-family: 'gotham.md';
-    
-    }
-    .currentlyPlaying {
-     font-size: 1.89rem;
-     width: 250px;
-     appearance:none;
-     background: none;
-     position:absolute;
-     overflow: hidden;
-     outline: none;
-     top: 225%;
-     color: rgbrgb(211, 0, 211);
-     font-family: 'gotham.md';
-     margin-right: 0%;
-     border: 0%;
-     display: inline-block;
-     justify-content: center;
-     align-items: center;
-     padding: 0;
-     left: -37%
-    }
 
-    .progressbar {
-     --bar-bg: rgb(211, 0, 211);
-     --seek-before-width: 0;
-     --seek-before-color: orange;
-     --knobby:     blue;
-     --selectedKnobby: cyan;
-    
-     appearance: none;
-     background: var(--bar-bg);
-     border-radius: 0;
-     width: 150%;
-     height: 11px;
-     outline: none;
-     font-size: 2rem;
+    .currentlyPlaying {
+        font-size: 1.89rem;
+        width:100%;
+        border: none;
      background: none;
      position: absolute;
-     top: -65%;
-     transform: translate(-8.9rem, 9rem);
-     
-     
-     color: white;
+     display: flex;
+    bottom: 0;
+     text-decoration: none;
+     color: rgb(211, 0, 211);
+     font-family: 'gotham.md';
+     width: 30vh;
+     text-align: center;
+     display: inline-block;
+     letter-spacing: 0.5px; 
+     padding: 0;
+     transform: translate(0,163px)
     }
-    
-  .songPhoto {
-    position: absolute;
-    display: inline-block;
-    left: 50%;
-    background-size: cover;
-    border-radius: 33%;
-    height: 200px;
-    text-decoration: none;
-    
-        /* transform: translate(-45%, -135%); */
-    }
+
+
+  
 }    
+
+@media screen and (min-width: 750px) {
+    .Audioplayer {
+            transform: translate(0, 40px);
+        }
+}

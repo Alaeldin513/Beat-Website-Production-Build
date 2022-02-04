@@ -42,19 +42,29 @@ function Navbar() {
                             "<GiLion/> Logo"
                         </a>
 
+                        <a href='/' className= {click ? 'whitetlname' : 'tlname'} >
+                         "Producer Name Here"  
+                          </a>
+                        <a  className ={click ? 'BurgerChange' : 'BurgerMenu'} onClick={handleClick} >
+                            { click ? <GoX/> : <GiHamburgerMenu/> }
+                        </a>  
+
                         {/* <a className ={click ? 'BurgerChange' : 'BurgerMenu'} onClick={handleClick} >
                              { click ? <GoX/> : <GiHamburgerMenu/> }
                         </a> */}
-
                           {/* <a className='menu-icon' onClick={handleClick}>
                           <i className={click ? 'BurgerMenu' : 'BurgerChange' } />
                           </a> */}
-
-                        <h1 className={click ? 'nav-menu active' : 'nav-menu'}>
+                        {/* <div className = 'hamburger' onClick={handleClick}>
+                            <i className = {click ? 'fas fa-times' : 'fas fa-bars'} 
+                            />
+                        </div> */}
+                  
+            </nav> 
+            <div>
+            <h1 className={click ? 'nav-menu active' : 'nav-menu'}>
                       <Link href = "www.google.com" > 
-                        <div className= 'nav-item' >
                           
-
                           <Link to = "/about">
                           <a className={click ? 'Beats' : 'Not-Beats' } onClick={handleClick} >
                               About 
@@ -78,21 +88,10 @@ function Navbar() {
                             {/* <a href = 'http://localhost:3000/pricing' className={click ? 'Pricing' : 'Not-Pricing' } onClick={handleClick}>
                               Pricing  
                             </a> */}
-                          <a  className ={click ? 'BurgerChange' : 'BurgerMenu'} onClick={handleClick} >
-                             { click ? <GoX/> : <GiHamburgerMenu/> }
-                          </a>
-                          <a href='/' className= {click ? 'whitetlname' : 'tlname'} >
-                         "Producer Name Here"  
-                          </a>
-                          </div>
+
                           </Link>  
                         </h1>
-                        {/* <div className = 'hamburger' onClick={handleClick}>
-                            <i className = {click ? 'fas fa-times' : 'fas fa-bars'} 
-                            />
-                        </div> */}
-                  
-            </nav> 
+            </div>
         </>
       );
 

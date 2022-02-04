@@ -8,9 +8,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   background: transparent;
 }
 
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content:center;
+}
 
-
-
+html, body {
+  height: 100%;
+  width: 100%;
+}
 
 .App {
   text-align: center;

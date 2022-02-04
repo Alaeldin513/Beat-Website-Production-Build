@@ -1,38 +1,30 @@
-/* .navbar {
+.navbar {
 
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
-
-  } */
-
-.nav-item {
-  position: absolute;
-  top: 1.2rem;
-  right: 1.5rem;
-  background: transparent;
-  font-size: 2rem;
-  cursor: pointer;
-  outline: none;
-}
-
-  .tlname {
+    width: 100%;
+    height: 75px;
     z-index: 6;
-    position: absolute;
+  }
+
+
+  /* .tlname {
+    z-index: 6;
     justify-self: start;
-    top: -2%;
+    top: 30px;
     left: 0%;
+    transform: translate(3%, 25%);
     cursor: pointer;
+
     font-size: 1.8rem;
-    transform: translate(25%, 50%);
     background: none;
     color: black;
     display: flex;
     text-decoration: none;
     align-items: center;
-    text-decoration: none;
     
   }
 
@@ -40,17 +32,17 @@
     z-index: 6;
     position: absolute;
     justify-self: start;
-    top: -20%;
+    top: 30px;
     left: 0%;
+    transform: translate(3%, 25%);
     cursor: pointer;
     font-size: 1.8rem;
-    transform: translate(25%, 50%);
     background: none;
     color: white;
     display: flex;
     text-decoration: none;
     align-items: center;
-  }
+  } */
 
   .whitetlname:hover {
     border-bottom: 4px solid rgb(163, 37, 146);
@@ -58,26 +50,28 @@
   }
 
   .tlname:hover {
-    border-bottom: 4px solid orangered;
+    border-bottom: 4px solid black;
     transition: all 0.2s ease-out;
   }
 
   .logopic {
-    z-index: 6;
-    position: absolute;
-    justify-self: start;
-    top: -10;
-    left: 10px;
     cursor: pointer;
     font-size: 5rem;
-    transform: translate(7%, 150%);
+    transform: translate(0, 41%);
     background: none;
     color: rgb(235, 157, 13);
     display: flex;
     text-decoration: none;
     align-items: center;
+    z-index: 6;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
   }
 
+  .logopic:hover {
+    border-bottom: 4px solid black;
+    transition: all 0.2s ease-out;    
+  }
 
   .GiLion {
     margin-left: 1rem;
@@ -97,6 +91,9 @@
         z-index: 8;
         margin-left: 1rem;
         font-size: 1.8rem;
+        z-index: 2;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
       }
       .GoX {
         
@@ -111,6 +108,9 @@
         z-index: 8;
         margin-left: 1rem;
         font-size: 1.8rem;
+        z-index:2;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
       }
   
 
@@ -118,12 +118,11 @@
  font-size: 3rem;
  background: none;
  position: absolute;
- top: 50%;
- left: 50%;
  text-decoration: none;
- transform: translate(-3.1rem, 18rem);
+ transform: translate(-4rem, -10rem);
  color: white;
-
+ text-align: center;
+ 
  }
 
   .Not-Beats {
@@ -131,6 +130,7 @@
     color: transparent;
     pointer-events: none;
     transform: translate(-100rem, -200rem);
+    display: none;
   }
   .Beatpage {
     font-size: 3rem;
@@ -139,7 +139,7 @@
     top: 60%;
     left: 50%;
     text-decoration: none;
-    transform: translate(-3.1rem, 23rem);
+    transform: translate(-4rem, -9rem);
     color: white;
     }
    
@@ -148,6 +148,7 @@
        color: transparent;
        pointer-events: none;
        transform: translate(-100rem, -200rem);
+       display: none;
      }
 
      .Songs {
@@ -157,7 +158,7 @@
       top: 60%;
       left: 50%;
       text-decoration: none;
-      transform: translate(-3.1rem, 28rem);
+      transform: translate(-4rem, -3rem);
       color: white;
       }
      
@@ -166,6 +167,7 @@
          color: transparent;
          pointer-events: none;
          transform: translate(-100rem, -200rem);
+         display: none;
        }   
 
 
@@ -201,7 +203,7 @@
     position: absolute;
     top: 0;
     right: 2rem;
-    transform: translate(25%, 50%);
+    transform: translate(25%, 0%);
     background: none;
     align-items: flex-end;
     display: inline-block;
@@ -210,7 +212,6 @@
 
   .BurgerMenu {
     position: absolute;
-    top: 0;
     right: 7.5rem;
     transform: translate(25%, 0%);
     background: transparent;
@@ -219,6 +220,9 @@
     text-decoration: none;
     color:black;
     font-size: 5rem;
+    z-index:2;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
   }
  
   .BurgerChange {
@@ -232,6 +236,9 @@
     display: inline-block;
     text-decoration: none;
     color: white;
+    z-index:2;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
   }
 
   /* .BurgerMenu:hover {
@@ -247,31 +254,28 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 0%;
     position: absolute;
-    top: 12;
+    justify-content: center;
+    /* top: 12; */
     left: 0;
     opacity: 1;
-    transition: all 0.5s ease;
+    transition: all 0.0s ease;
    background: white;
   }
 
   .nav-menu.active {
     background: #242222;
-    left: 0;
+    position: absolute;
     opacity: 1;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     z-index: 5;
     width: 100%;
     height: 100%;
+    text-align: center;
+    
   }
 
-  .nav-item {
-    position: relative;
-    display: grid;
-    align-items: center;
-    z-index: 2;
-  }
   .menu-icon {
     position: relative;
   }
@@ -280,20 +284,11 @@
   
   @media screen and (max-width: 750px) {
     .navbar {
-      height: 100%;
       width: 100%;
     }
     
     .menu-icon {
       position: relative;
-    }
-    .nav-item {
-      position: relative;
-      display: grid;
-      align-items: center;
-      height:0;
-      
-
     }
 
     .NavbarItems {
@@ -304,51 +299,55 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: 100%;
+      height: 0%;
       position: absolute;
-      top: 12;
+      /* top: 12; */
       left: 0%;
       opacity: 1;
-      transition: all 0.5s ease;
-     z-index:0
+      transition: all 0.0s ease;
+     z-index:2
     }
   
-    .nav-menu.active {
+    /* .nav-menu.active {
       background: #242222;
       left: 0;
       opacity: 1;
-      transition: all 0.5s ease;
+      transition: all 0.3s ease;
       z-index: 5;
-    }
+    } */
    
 
 
     .BurgerMenu {
       position: absolute;
-      top: 6%;
+      top: -4px;
       right: 12%;
-      transform: translate(25%, 0%);
       background: none;
       align-items: flex-end;
       display: inline-block;
       text-decoration: none;
       color: black;
       opacity: 1;
-      font-size: 4rem;
+      font-size: 3rem;
+      z-index:2;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
     
     }
     .BurgerChange {
       position: absolute;
-      top: 7%;
       right: 12%;
-      transform: translate(25%, 0%);
+      top: -10px;
       background: none;
       align-items: flex-end;
       display: inline-block;
       text-decoration: none;
       color: white;
       opacity: 1;
-      font-size: 4rem;
+      font-size: 3.5rem;
+      z-index:2;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
     }
 
     .About {
@@ -367,13 +366,11 @@
       font-size: 2.8rem;
       background: none;
       position: absolute;
-      top: 50%;
-      left: 50%;
       text-decoration: none;
-      transform: translate(-3.1rem, 12rem);
+      transform: translate(-4rem, -12rem);
       color: white;
       height:0;
-      
+      width: 0;
     }
       .Not-Beats {
         background: transparent;
@@ -390,7 +387,7 @@
         top: 50%;
         left: 50%;
         text-decoration: none;
-        transform: translate(-3.1rem, 18rem);
+        transform: translate(-4rem, -6rem);
         color: white;
         height:0;
       
@@ -410,7 +407,7 @@
           top: 60%;
           left: 50%;
           text-decoration: none;
-          transform: translate(-3.1rem, 24rem);
+          transform: translate(-4rem, -5rem);
           color: white;
           }
          
@@ -429,24 +426,15 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-3.1rem, 24rem);
+      transform: translate(-4rem, 24rem);
       text-decoration: none;
       color: white;
     }
     
     .logopic {
-      z-index: 6;
-      position: absolute;
-      justify-self: start;
-      top: 1.5%;
-      left: 10px;
-      cursor: pointer;
-      font-size: 2.5rem;
-      background: none;
-      color: rgb(235, 157, 13);
-      display: flex;
-      text-decoration: none;
-      align-items: center;
+      position: flex block;
+      font-size: 3rem;
+      transform: translate(0,40px);
     }
 
 
@@ -456,17 +444,17 @@
     z-index: 6;
     position: absolute;
     justify-self: start;
-    top: -2%;
-    left: 0%;
+    left: 10px;
     cursor: pointer;
     font-size: 1.1rem;
-    transform: translate(25%, 50%);
     background: none;
     color: black;
     display: flex;
     text-decoration: none;
     align-items: center;
-    text-decoration: none;
+    letter-spacing: 0.8px;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
     
   }
 
@@ -474,14 +462,13 @@
     z-index: 6;
     position: absolute;
     justify-self: start;
-    top: -20%;
-    left: 0%;
+    left: 10px;
     cursor: pointer;
     font-size: 1.1rem;
-    transform: translate(25%, 50%);
     background: none;
     color: white;
     display: flex;
     text-decoration: none;
     align-items: center;
+    letter-spacing: 0.8px;
   }

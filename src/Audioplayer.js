@@ -6,123 +6,15 @@ import {IoMdSkipBackward} from 'react-icons/io'
 import {IoMdSkipForward} from 'react-icons/io'
 import {GrPlayFill} from 'react-icons/gr'
 import {GrPauseFill} from 'react-icons/gr'
+import {SongList} from './SongList'
 
 //includes audioplayer functionality and all songs that are necessary to load
 
 
-function AudioPlayer(props) {
-    
-    const [songs] = useState([
-        {
-            title: "The Funk",
-            artist: "2 chainzprogra",
-            img_src: "../images/fire.jpg",
-            src: "../beats/the funk prod.mp3",
-        },
-        {
-          title: "Mimosa",  
-          artist: "Machine Gun Kelly",
-          img_src: "../images/mimosa.jfif",
-          src: "../beats/hornsprod.mp3",
-            //index loaded into site initially
-        },
-        {
-        title: "Orbit",
-        artist: "2 chainz",
-        img_src: "../images/orbit.jpg",
-        src: "../beats/orbitprod.mp3",
-        },
-        {
-        title: "Trapavelli",
-        artist: "2 chainz",
-        img_src: "../images/ig88.jfif",
-        src: "../beats/trapavelliprod1.mp3",
-        }
-        ,
-        {
-        title: "Halftime",
-        artist: "2 chainz",
-        img_src: "../images/halftime.jfif",
-        src: "../beats/halftime Kyrie Prod.mp3",
-        }
-        ,
-        {
-        title: "Let it Go",
-        artist: "2 chainz",
-        img_src: "../images/purplebeach.jpg",
-        src: "../beats/let it go prod.mp3",
-        }
-        ,
-        {
-        title: "Delta Ave",
-        artist: "2 chainz",
-        img_src: "../images/hoh.jpg",
-        src: "../beats/delta ave prod.mp3",
-        }
-        ,
-        {
-        title: "Riding out",
-        artist: "2 chainz",
-        img_src: "../images/kfc.jfif",
-        src: "../beats/Riding out.mp3",
-        }        ,
-        {
-        title: "Rako",
-        artist: "2 chainz",
-        img_src: "../images/rako.jpg",
-        src: "../beats/Rako.mp3",
-        }        ,
-        {
-        title: "Get it",
-        artist: "2 chainz",
-        img_src: "../images/get.jpg",
-        src: "../beats/Get.mp3",
-        }        ,
-        {
-        title: "42 Dugg",
-        artist: "2 chainz",
-        img_src: "../images/piano.jfif",
-        src: "../beats/dugg.mp3",
-        }
-        ,
-        {
-        title: "KISS",
-        artist: "2 chainz",
-        img_src: "../images/kiss.jpeg",
-        src: "../beats/KISS1 G prod.mp3",
-        }        ,
-        {
-        title: "Void",
-        artist: "2 chainz",
-        img_src: "../images/void.jpeg",
-        src: "../beats/void prod.mp3",
-        }        ,
-        {
-        title: "Ronald Reagan Era",
-        artist: "2 chainz",
-        img_src: "../images/ronaldreagan.jpeg",
-        src: "../beats/ronald reagan prod.mp3",
-        }        ,
-        {
-        title: "You Ain't Ever",
-        artist: "2 chainz",
-        img_src: "../images/youaintever.jpeg",
-        src: "../beats/you ain't ever prod.mp3",
-        }
-    ]);
-    // const shuffle = (arr) => {
-    //     for (let i = songs.length - 1; i > 0; i--) {
-    //         const j = Math.floor(Math.random() * (i + 1));
-    //         [songs[i], songs[j]] = [songs[j], songs[i]];
-    //       }
-    // };
+export function AudioPlayer(props) {
 
-
-    
+    //states
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
-    const [nextSongIndex, setNextSongIndex] = useState(0);
-    //state
-
     const [isPlaying, setIsPlaying] = useState(false);
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
@@ -138,28 +30,13 @@ function AudioPlayer(props) {
         let result = Math.floor(Math.random() * (max - min + 1) + min); //The maximum and min are inclusive
         return result
       }
-    
-    let randint = getRandomInt(0,songs.length-1);
-
-      
-      useEffect(() => { 
-        setNextSongIndex(() => {
-          if (currentSongIndex + 1 > songs.length - 1) {
-            return 0;
-          } else {
-            return currentSongIndex +1;   
-             
-              // return currentSongIndex;
-            }    
-        });
-      }, [currentSongIndex]);
-
-
-
+    let randint = getRandomInt(0,SongList.length-1);
+  
     
     useEffect(() => { //takes a function as its first parameter, array as second parameter function is what we want it to do
         const seconds = Math.floor(audioPlayer.current.duration);
         setDuration (seconds); //coming from variable set 1 line above ^
+        
         progressBar.current.max = seconds;
         
           //current is referencing current item in our reference, max is a built in property on our input range
@@ -188,18 +65,39 @@ function AudioPlayer(props) {
     //     }
     // }
 
+    //not sure if necessary, firefox/Ios workaround attempt
+    const catchError = () => { 
+        var playPromise = document.querySelector('audio').play();
+        var loadPromise = document.querySelector('audio').load();
+        if (playPromise!== undefined) {
+            playPromise.then(_ => {
+                playPromise();
+            })
+            .catch(error => {
+               loadPromise(); 
+            });
+        }
+    }
+//These lines are key to fixing the not playing problem after duration
+//and also the skip song working properly make sure to study
+
+//These Lines below were commented out and FIXED the problem 
+
 
     useEffect(() => {
         if(currentSongIndex === 1 && currentTime === 0){
-            // audioPlayer.current.play();
-             setIsPlaying(false);
+            //catchError(); 
+            //audioPlayer.current.play();
+            togglePlayPause();
+            
         }
         else { 
-            audioPlayer.current.play();
-            setIsPlaying(true);
+            //audioPlayer.current.play();
+            //catchError(); 
+            //audioPlayer.current.pause();
         }
-        }, [currentSongIndex]); // for going to next song after duration changes
-
+        }, [currentSongIndex]);
+        
 
     const togglePlayPause = () => {
         const prevValue = isPlaying; //grabs state outside so that play button doesn't break from useffect being asyncronous
@@ -231,16 +129,6 @@ const changePlayerCurrentTime = () => {
     setCurrentTime(progressBar.current.value);
 }
 
-const backButton = () => {
-    progressBar.current.value = Number(progressBar.current.value - 15);
-    changeRange();
-}
-
-const forwardButton = () => {
-    progressBar.current.value = Number(progressBar.current.max); 
-    changeRange();
-    
-}
 //Insert songs and set them up for skipping function:
 
 const SkipSong = (forwards = true) => {
@@ -249,7 +137,7 @@ const SkipSong = (forwards = true) => {
             let temp = currentSongIndex
             temp++;
 
-            if (temp > songs.length - 1) {
+            if (temp > SongList.length - 1) {
                 temp = 0;
             }
             return temp;
@@ -260,7 +148,7 @@ const SkipSong = (forwards = true) => {
             temp--;
 
             if (temp < 0) {
-                temp = songs.length - 1;
+                temp = SongList.length - 1;
             }
 
             return temp;
@@ -275,7 +163,7 @@ const backSong = (backwards = true) => {
             temp--;
 
             if (temp < 0) {
-                temp = songs.length-1;
+                temp = SongList.length-1;
             }
             return temp;
         });
@@ -285,7 +173,7 @@ const backSong = (backwards = true) => {
             temp++;
 
             if (temp < 0) {
-                temp = songs.length - 1;
+                temp = SongList.length - 1;
             }
 
             return temp;
@@ -293,59 +181,70 @@ const backSong = (backwards = true) => {
     }
 }
 
+let currentURL = window.location.href;
 
-useEffect(() => { //takes a function as its first parameter, array as second parameter function is what we want it to do
+function URLChecker() {
+    if (currentURL.includes('/beats')) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+useEffect(() => { //function checks everytime we want to see if we want to go to the next song, or navigated pages to un-render audioplayer
     if ( calculateTime(currentTime) === calculateTime(duration)) {
-        console.log('ebola');
         SkipSong(true);  
     } else {
-        console.log('john');
+        console.log("else loop")
+        if ( URLChecker() ){
+            audioPlayer.current.pause();
+        }
     }
    //current is referencing current item in our reference, max is a built in property on our input range
 }, [currentTime]);
-
-
-
+    
 
     return (
         //working below this line
+        
         <div className = "Audioplayer">
             <Link href = 'https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css' rel = "sytlesheet" />
             
-            <audio src = {songs[currentSongIndex].src} ref = {audioPlayer} preload = "metadata" >
+            <audio src = {SongList[currentSongIndex].src} ref = {audioPlayer} preload = "metadata" >
             </audio>
 
-            <img className ="songPhoto" src = {songs[currentSongIndex].img_src} >
-            </img>   
+            <div className ="songPhotoContainer">
+            <img className ="songPhoto" src = {SongList[currentSongIndex].img_src} >
+            </img>  
+            </div> 
 
             <div className = "currentlyPlaying" >
             Now Playing: 
             <br />
-            {songs[currentSongIndex].title}
+            {SongList[currentSongIndex].title}
+            {/* {songs[currentSongIndex].title} */} 
+            {/* Not necessary line above, but keeping around in case SongList method breaks and need to keep songs local to audioplayer */}
             </div>
 
-
-
-            <button className = "forwardbackward" onClick = {()=> { backSong(); setIsPlaying(true); }} > 
+            <button className = "forwardbackward" onClickCapture = {()=> { backSong(); setIsPlaying(true); }} > 
             <IoMdSkipBackward/>  
             
             </button>
             
-            <button onClick ={togglePlayPause} className = "playpause"  > 
+            <button onClickCapture ={togglePlayPause} className = "playpause"  > 
             { isPlaying?  <GrPauseFill className = "pause" /> : <GrPlayFill className = "play" /> } 
             
             </button>
 
-            <button className = "forwardbackward" onClick = {()=> { SkipSong(); setIsPlaying(true) }}  > 
+            <button className = "forwardbackward" onClickCapture = {()=> { SkipSong(); setIsPlaying(true) }}  > 
                 <IoMdSkipForward/>
             </button> 
             
+            <input type = "range" className = "progressbar" defaultValue = "0" ref = {progressBar} onChange = {changeRange} />
+
             <div className = "currenttime" > 
             {calculateTime(currentTime)} 
-            </div>
-
-            <div> 
-                <input type = "range" className = "progressbar" defaultValue = "0" ref = {progressBar} onChange = {changeRange} />
             </div>
 
             <div className = "duration" > 
@@ -357,6 +256,5 @@ useEffect(() => { //takes a function as its first parameter, array as second par
 
     )
 }
-
 
 export default AudioPlayer;

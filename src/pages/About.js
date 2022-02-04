@@ -22,8 +22,8 @@ export default function About() {
 
     <div className = "box">
     
-    <div className = "starterText">
-      Updates/Content Weekly
+    <div className = "starterText" >
+      New & Improved! 
     </div>
 
     <div className = "starterText2">
@@ -35,8 +35,6 @@ export default function About() {
     </div>
 
     <div className = "starterText4">
-        15 songs and 45 Minutes of freestyle, press play once and it'll run through 'em all
-
     </div>
 
     </div> 

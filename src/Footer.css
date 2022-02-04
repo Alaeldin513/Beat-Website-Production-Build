@@ -1,38 +1,30 @@
 .Footer {
-
-    z-index: 101;
+    display:flex;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 30vh;
+    height: 7.5vh;
     background-color: transparent;
     padding: 0;
     text-align: center;
-
     background: none;
     position: absolute;
-    top: 77%;
     left: 0%;
     text-decoration: none;
     color: white;
    
+    vertical-align: middle;
+    align-items: center;
+    justify-content: right;
+    padding-right: 10%
 }
 
 .insta {
-
     width: 3rem;
     /* display: flex; */
-    align-items: center;
     /* overflow:hidden; */
-    z-index: 100;
-    
-    transform: translate(-2rem, -3rem);
-        
-       
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        /* text-decoration: none; */
+        position:relative;
+        top:55%;
         
 }
 
@@ -41,17 +33,16 @@
     /* display: flex; */
     align-items: center;
     /* overflow:hidden; */
-    z-index: 100;
-    
-   /* this section keeps icons centered at all sizes */
 
     
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: relative;
     /* text-decoration: none; */
 
-    transform: translate(-6rem, -3.05rem);
-
         
+}
+
+@media screen and (max-width: 500px) {
+    .Footer {
+        height: 8vh;
+    }
 }
