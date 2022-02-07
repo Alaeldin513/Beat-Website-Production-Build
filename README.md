@@ -1,6 +1,12 @@
 https://www.nextdaybeats.com 
 (work in progress)
 
+To-do:
+-Add backend for sessions, dB
+-Easier upload of tracks to save time
+-Table layout, legal page for buying beats similar to other music selling websites
+
+
 
 # Getting Started with Create React App
 
