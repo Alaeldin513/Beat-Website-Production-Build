@@ -169,9 +169,9 @@ export function Beats() {
                         {/* onClick = "function(); function()" */}
                         <img className = "rowItems_img" src = {SongList.img_src} onClick = {togglePlayPause} />
                         <div className = "rowItems" style = {{cursor: "pointer"}} onClick = {() => {clickIndexChanger(index)}}> {SongList.title} </div>
-                        <div className = "rowItems" id = 'iphoneHider'> 17:38 </div> 
-                        <div className = "rowItems" id = 'iphoneHider'> 169 </div>
-                        <div className = "rowItems" id = 'iphoneHider' > Hype, Mysterious </div>    
+                        <div className = "rowItems" id = 'iphoneHider'> {SongList.time} </div> 
+                        <div className = "rowItems" id = 'iphoneHider'> - </div>
+                        <div className = "rowItems" id = 'iphoneHider' > {SongList.mood} </div>    
                         <div className = "rowItems" id = 'iphoneHider' >
                              Toni 
                         </div>  

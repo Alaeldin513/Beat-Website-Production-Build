@@ -82,17 +82,17 @@ export function AudioPlayer(props) {
 //and also the skip song working properly make sure to study
 
 //These Lines below were commented out and FIXED the problem 
-
+//seem to work ok in current state but need to watch
 
     useEffect(() => {
         if(currentSongIndex === 1 && currentTime === 0){
             //catchError(); 
-            //audioPlayer.current.play();
-            togglePlayPause();
+            audioPlayer.current.pause();
+            //togglePlayPause();
             
         }
         else { 
-            //audioPlayer.current.play();
+            audioPlayer.current.play();
             //catchError(); 
             //audioPlayer.current.pause();
         }
