@@ -5,7 +5,7 @@
     display: flex;
     background: none;
     position: absolute;
-    top: 58%;
+    top: 54%;
     justify-content: center;
     justify-self: center;
     text-decoration: none;
@@ -200,13 +200,13 @@
 bottom: 0;
  text-decoration: none;
  color: rgb(211, 0, 211);
- font-family: 'gotham.md';
+ font-family: "Univers LT W01_67 Bold_1476016",Helvetica,Arial,sans-serif;
  width: 30vh;
  text-align: center;
  display: inline-block;
  letter-spacing: 0.5px; 
  padding: 0;
- transform: translate(0,163px)
+ transform: translate(0,175px)
 }
 .songsLeft{
     font-size: 1.89rem;
@@ -327,13 +327,13 @@ bottom: 0;
     bottom: 0;
      text-decoration: none;
      color: rgb(211, 0, 211);
-     font-family: 'gotham.md';
+     font-family: "Univers LT W01_67 Bold_1476016",Helvetica,Arial,sans-serif;
      width: 30vh;
      text-align: center;
      display: inline-block;
      letter-spacing: 0.5px; 
      padding: 0;
-     transform: translate(0,163px)
+     transform: translate(0,175px)
     }
 
 

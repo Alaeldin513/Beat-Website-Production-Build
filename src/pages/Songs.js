@@ -13,9 +13,13 @@ export default function Songs() {
         
         <div className = "mainBox">
             
-        <div className = 'songssMenu'>
+            <div className = 'songssMenu'>
+            <form action = "../../post" method = "post" className = "form"> 
+            <button type = "submit" > Connect </button>
+            </form>
 
-        </div> 
+
+            </div> 
 
 
 
@@ -28,7 +32,7 @@ export default function Songs() {
 
 
 
-    </div>
+        </div>
 
 
         );

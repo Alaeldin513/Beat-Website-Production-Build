@@ -48,11 +48,11 @@ export function Beats() {
 
     useEffect(() => {
         if(currentSongIndex === 0 && currentTime === 0){
-            // audioPlayer.current.play();
+            audioPlayer.current.play();
              setIsPlaying(false);
         }
         else { 
-            audioPlayer.current.play();
+            //audioPlayer.current.play();
             setIsPlaying(true);
         }
         }, [currentSongIndex]);

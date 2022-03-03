@@ -8,50 +8,19 @@
     width: 100%;
     height: 75px;
     z-index: 6;
+    font-family: "Univers LT W01_67 Bold_1476016",Helvetica,Arial,sans-serif;
   }
-
-
-  /* .tlname {
-    z-index: 6;
-    justify-self: start;
-    top: 30px;
-    left: 0%;
-    transform: translate(3%, 25%);
-    cursor: pointer;
-
-    font-size: 1.8rem;
-    background: none;
-    color: black;
-    display: flex;
-    text-decoration: none;
-    align-items: center;
-    
-  }
-
-  .whitetlname {
-    z-index: 6;
-    position: absolute;
-    justify-self: start;
-    top: 30px;
-    left: 0%;
-    transform: translate(3%, 25%);
-    cursor: pointer;
-    font-size: 1.8rem;
-    background: none;
-    color: white;
-    display: flex;
-    text-decoration: none;
-    align-items: center;
-  } */
 
   .whitetlname:hover {
-    border-bottom: 4px solid rgb(163, 37, 146);
+    color: solid rgb(163, 37, 146);
     transition: all 0.2s ease-out;
   }
 
   .tlname:hover {
-    border-bottom: 4px solid black;
+    color: solid rgb(163, 37, 146);
     transition: all 0.2s ease-out;
+    
+    
   }
 
   .logopic {
@@ -69,7 +38,7 @@
   }
 
   .logopic:hover {
-    border-bottom: 4px solid black;
+    color: 4px solid rgb(163, 37, 146);
     transition: all 0.2s ease-out;    
   }
 
@@ -210,41 +179,56 @@
     text-decoration: none;
   }
 
+  a:hover {
+    color: rgb(163, 37, 146);
+;    opacity: 0.5;
+  }
   .BurgerMenu {
+    display: flex;
     position: absolute;
-    right: 7.5rem;
-    transform: translate(25%, 0%);
+    width: 100%;
+    justify-content: right;
+    padding-right: 4rem;
     background: transparent;
-    align-items: flex-end;
-    display: inline-block;
     text-decoration: none;
     color:black;
-    font-size: 5rem;
+    font-size: 4rem;
     z-index:2;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
   }
+  .BurgerMenu:hover{
+    color: black;
+    opacity: 0.7;
+  }
+  .BurgerChange:hover{
+    color: white;
+    opacity: 0.7;
+  }
  
   .BurgerChange {
     position: absolute;
-    top: 0;
+    display: flex;
+    width: 100%;
+    justify-content: right;
     right: 7.5rem;
-    font-size: 5rem;
-    transform: translate(25%, 0%);
+    font-size: 4.5rem;
+    transform: translate(3.7rem, 0%);
     background: none;
-    align-items: flex-end;
-    display: inline-block;
+    
     text-decoration: none;
     color: white;
     z-index:2;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
+
+    padding-right: 0rem;
+    background: transparent;
+    text-decoration: none;
+    z-index:2;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
   }
-
-  /* .BurgerMenu:hover {
-    border-bottom: 4px solid rgb(163, 37, 146);
-  } */
-
 
   .menu-icon {
     display: none;
@@ -280,7 +264,30 @@
     position: relative;
   }
 
-
+  .loginDissappear {
+    z-index: 6;
+    position: absolute;
+    justify-self: start;
+    left: 10px;
+    cursor: none;
+    font-size: 0.9rem;
+    background: none;
+    color: transparent;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    letter-spacing: 0.9px;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    font-weight: bold;
+    transform:translate(3.2rem,4rem);
+    
+  }
+  .loginDissappear:hover{
+    color:transparent;
+    visibility: hidden;
+    cursor:auto;
+  }
   
   @media screen and (max-width: 750px) {
     .navbar {
@@ -288,11 +295,11 @@
     }
     
     .menu-icon {
-      position: relative;
+      position: flex;
     }
 
     .NavbarItems {
-      position: relative;
+      position: flex;
     }
 
     .nav-menu {
@@ -320,11 +327,11 @@
 
     .BurgerMenu {
       position: absolute;
-      top: -4px;
-      right: 12%;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: right;
       background: none;
-      align-items: flex-end;
-      display: inline-block;
       text-decoration: none;
       color: black;
       opacity: 1;
@@ -332,15 +339,15 @@
       z-index:2;
       -webkit-tap-highlight-color: transparent;
       user-select: none;
-    
+      transform:translate(1.5rem,0)
     }
     .BurgerChange {
       position: absolute;
-      right: 12%;
-      top: -10px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: right;
       background: none;
-      align-items: flex-end;
-      display: inline-block;
       text-decoration: none;
       color: white;
       opacity: 1;
@@ -348,6 +355,7 @@
       z-index:2;
       -webkit-tap-highlight-color: transparent;
       user-select: none;
+      transform:translate(5.2rem,0)
     }
 
     .About {
@@ -446,15 +454,16 @@
     justify-self: start;
     left: 10px;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     background: none;
     color: black;
     display: flex;
     text-decoration: none;
     align-items: center;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.9px;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
+    font-weight: bold;
     
   }
 
@@ -464,11 +473,12 @@
     justify-self: start;
     left: 10px;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     background: none;
     color: white;
     display: flex;
     text-decoration: none;
     align-items: center;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.9px;
+    font-weight: bold;
   }

@@ -5,8 +5,8 @@
     justify-content: center;
     text-align: center;
     width: 100%;
-    height: 100%;
-    z-index: -1;
+    height: 50%;
+    
 }
 
 .starterText3 {
@@ -84,7 +84,7 @@
     @media screen and (min-width: 750px) { 
         .starterText {
             position: absolute;
-            top: 55px;
+            top: 50px;
         }
         .starterText2 {
             position: absolute;

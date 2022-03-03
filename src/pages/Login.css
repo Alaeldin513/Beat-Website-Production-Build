@@ -1,0 +1,121 @@
+.loginPage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    z-index: 10;
+}
+
+.loginSection{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-top: 5%;
+    justify-content: top;
+    align-items: center;
+    font-weight: bold;
+    font-family: "Univers LT W01_67 Bold_1476016",Helvetica,Arial,sans-serif;
+    font-size: 32px;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+.websiteLogo{
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+.signIn{
+    display: flex;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.loginForm {
+    text-align: left;
+    padding-top: 20px;
+    width: 345px;
+}
+
+.loginInput {
+    
+    font-size: 18px;
+    width: 100%;
+    padding: 9px 12px;
+}
+
+.passwordFormat {
+    font-size: 18px;
+    padding-bottom:10px;
+}
+
+.usernameFormat {
+    font-size: 18px;    
+    padding-bottom:10px;
+}
+
+.loginButton {
+    margin-top: 30px;
+    width: 100%;
+    background-color: rgb(211, 0, 211);
+    height: 36px;
+    border-radius: 5px;
+    font-size: 18px; 
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.orSpan {
+    position: relative;
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    background:white;
+    width: 57px;
+    text-align: center;
+}
+.hr1 {
+    position: relative;
+    border: 0;
+    border-top: 1px solid grey;
+    width: 345px;
+    transform:translateY(35px)
+  }
+
+.seperator {
+    content: "";
+    position: relative;
+    top: 50%;
+    left:0;
+    height: 1px;
+    width: 100%;
+    transform: translateY(-50%);
+    color: grey;
+}
+
+.loginRegisterButton {
+    
+    width: 345px;
+    background-color: rgb(211, 0, 211);
+    border-radius: 5px;
+    height: 36px;
+    font-size: 18px; 
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.registerForm{
+    width: 345px;
+    
+}
+
+.registerLink {
+    color:white;
+    text-decoration: none;
+}

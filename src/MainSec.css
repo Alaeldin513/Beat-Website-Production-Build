@@ -1,47 +1,51 @@
 
 .backsplash {
-z-index: -1;    
-position:relative;
-color:rgba(22, 21, 21, 0.479);
-
-
-
-transform: (-10vh, 0);
+z-index: 0;
+width: 100%;
+height: 100%;   
+position: absolute;
 display: flex;
 flex-direction: column;
 justify-content:  center;
 align-items: center;
-box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.2);
-object-fit: contain;
-background-color: rgba(255, 255, 255,0);
-
-
 }
 
 
+.loginDissappear:hover {
+    color:transparent;
+    visibility: hidden;
+    cursor:auto;
+}
 
-.purplebeach{
-    position:relative;
-
-    background-color: whitesmoke;
-    width: 20%;
+.login {
+    z-index: 6;
+    position: absolute;
+    height: auto;
+    width: auto;
+    justify-self: start;
+    cursor: pointer;
+    font-size: 0.9rem;
+    background: none;
+    color: black;
     display: flex;
-    align-items: center;
-    overflow:hidden;
-    z-index: 0;
+    text-decoration: none;
+    letter-spacing: 0.9px;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    font-weight: bold;
+    top: 8%;
+    left: 5.75%;
     
-    border-radius: 4%;
+    
+    
+}
 
-        
-       
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        text-decoration: none;
-        transform: translate(-19.5rem, 8.3rem);
-    
+@media screen and (max-width: 768px) {
+
+    .login {
+        left:10px;
+        top: 4.5rem;
+    }
 
 
 }
-
-

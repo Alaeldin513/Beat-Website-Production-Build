@@ -32,7 +32,17 @@ export function AudioPlayer(props) {
       }
     let randint = getRandomInt(0,SongList.length-1);
   
-    
+    const toggle = () => setIsPlaying(!isPlaying);
+
+    // useEffect (() => {
+    //     const prevValue = isPlaying;
+    //     isPlaying? audioPlayer.current.play() : audioPlayer.current.pause();
+
+    // }, [isPlaying]
+    // );
+
+
+
     useEffect(() => { //takes a function as its first parameter, array as second parameter function is what we want it to do
         const seconds = Math.floor(audioPlayer.current.duration);
         setDuration (seconds); //coming from variable set 1 line above ^
@@ -40,7 +50,7 @@ export function AudioPlayer(props) {
         progressBar.current.max = seconds;
         
           //current is referencing current item in our reference, max is a built in property on our input range
-    }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState, currentTime,isPlaying]); //array tells us when it wants us to run use effect if we dont use this 
+    }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState,SongList?.loadedmetadata, currentTime,isPlaying]); //array tells us when it wants us to run use effect if we dont use this 
     //it will run every single time component refreshes, empty array only runs once.  seems like once, but problem is audio file may have not loaded
     //audioplayer exists, current exists updated when loadedmetadata is available, do same with readystate tells us when its loaded as well 
 
@@ -52,18 +62,18 @@ export function AudioPlayer(props) {
         return `${returnedMinutes}:${returnedSeconds}`;
       }
 
-    // const maxTime = (end) => {
-    //     const playTime = end;
-    //     return (playTime);
-    // }  
-    // const endSlider = (duration) => {
-    //     if(duration === Number(audioPlayer.current.currentTime)) {
-    //         return SkipSong;
-    //     }
-    //     else {
-    //         return (false);
-    //     }
-    // }
+    const maxTime = (end) => {
+        const playTime = end;
+        return (playTime);
+    }  
+    const endSlider = (duration) => {
+        if(duration === Number(audioPlayer.current.currentTime)) {
+            return SkipSong;
+        }
+        else {
+            return (false);
+        }
+    }
 
     //not sure if necessary, firefox/Ios workaround attempt
     const catchError = () => { 
@@ -196,18 +206,15 @@ useEffect(() => { //function checks everytime we want to see if we want to go to
     if ( calculateTime(currentTime) === calculateTime(duration)) {
         SkipSong(true);  
     } else {
-        console.log("else loop")
         if ( URLChecker() ){
             audioPlayer.current.pause();
         }
     }
    //current is referencing current item in our reference, max is a built in property on our input range
-}, [currentTime]);
+}, [duration]);
     
 
     return (
-        //working below this line
-        
         <div className = "Audioplayer">
             <Link href = 'https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css' rel = "sytlesheet" />
             
@@ -227,17 +234,17 @@ useEffect(() => { //function checks everytime we want to see if we want to go to
             {/* Not necessary line above, but keeping around in case SongList method breaks and need to keep songs local to audioplayer */}
             </div>
 
-            <button className = "forwardbackward" onClickCapture = {()=> { backSong(); setIsPlaying(true); }} > 
+            <button className = "forwardbackward" onClick = {()=> { backSong(); setIsPlaying(true); }} > 
             <IoMdSkipBackward/>  
             
             </button>
             
-            <button onClickCapture ={togglePlayPause} className = "playpause"  > 
+            <button onClick ={togglePlayPause} className = "playpause"  > 
             { isPlaying?  <GrPauseFill className = "pause" /> : <GrPlayFill className = "play" /> } 
             
             </button>
 
-            <button className = "forwardbackward" onClickCapture = {()=> { SkipSong(); setIsPlaying(true) }}  > 
+            <button className = "forwardbackward" onClick = {()=> { SkipSong(); setIsPlaying(true) }}  > 
                 <IoMdSkipForward/>
             </button> 
             

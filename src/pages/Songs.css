@@ -1,6 +1,4 @@
 .mainBox {
-
-    color:orange;
     
     }
     
@@ -16,4 +14,15 @@
         z-index: 1;
         transition: all 0.5s ease;
        background: skyblue;
+      }
+
+
+      .form {
+          display: flex;
+          
+          height: 100%;;
+          top: 50%;
+          justify-content: center;
+          vertical-align: middle;
+          align-items: center;
       }
