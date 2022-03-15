@@ -19,7 +19,7 @@ function MainSec () {
         <>
             <div className = 'backsplash'>
                 <a href = '/login' className = "login" >
-                    "Sign in"
+                    Sign in
                 </a>  
                     {/* <img 
                     className = 'purplebeach'

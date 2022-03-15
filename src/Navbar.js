@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-import { GiLion } from "react-icons/gi";
+import { GiAnt } from "react-icons/gi";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { GoX } from 'react-icons/go';
 
@@ -39,11 +39,11 @@ function Navbar() {
                          MAA Beats  
                         </a> */}
                         <a href='/' className= 'logopic' >
-                            "<GiLion/> Logo"
+                            <GiAnt/> 
                         </a>
 
                         <a href='/' className= {click ? 'whitetlname' : 'tlname'} >
-                         "Producer Name Here"  
+                         Beats by THE Ant Man 
                           </a>
                         <a  className ={click ? 'BurgerChange' : 'BurgerMenu'} onClick={handleClick} >
                             { click ? <GoX/> : <GiHamburgerMenu/> }
@@ -74,6 +74,13 @@ function Navbar() {
                           <Link to = "/beats">
                           <a className={click ? 'Beatpage' : 'Not-Beatpage' } onClick={handleClick} >
                               Beats 
+                          </a>
+                          </Link>
+
+                          <Link to = "/upload">
+                          <a className={click ? 'Upload' : 'Not-Upload' } onClick={handleClick} >
+                              Upload
+                              <br/> 
                           </a>
                           </Link>
 

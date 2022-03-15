@@ -7,11 +7,25 @@ import {IoMdSkipForward} from 'react-icons/io'
 import {GrPlayFill} from 'react-icons/gr'
 import {GrPauseFill} from 'react-icons/gr'
 import {SongList} from './SongList'
+import axios from 'axios';
 
 //includes audioplayer functionality and all songs that are necessary to load
 
 
 export function AudioPlayer(props) {
+
+
+    //song API
+    const PF = "http://localhost:8080";
+    useEffect(() => {
+        const fetchSongs = async () => {
+            const res = await axios.get( "http://localhost:8080/songs" );
+            setSongs(res.data);
+        };
+        fetchSongs();
+    }, []);
+
+
 
     //states
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
@@ -19,30 +33,22 @@ export function AudioPlayer(props) {
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
 
+    const [songs, setSongs] = useState([]);
+
+
     //references
     const audioPlayer = useRef(); //reference our audio component
     const progressBar = useRef(); //reference to our slider
     const animationRef = useRef(); //references animation of slider
     
-      function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        let result = Math.floor(Math.random() * (max - min + 1) + min); //The maximum and min are inclusive
-        return result
-      }
-    let randint = getRandomInt(0,SongList.length-1);
+    //   function getRandomInt(min, max) {
+    //     min = Math.ceil(min);
+    //     max = Math.floor(max);
+    //     let result = Math.floor(Math.random() * (max - min + 1) + min); //The maximum and min are inclusive
+    //     return result
+    //   }
+    // let randint = getRandomInt(0,SongList.length-1);
   
-    const toggle = () => setIsPlaying(!isPlaying);
-
-    // useEffect (() => {
-    //     const prevValue = isPlaying;
-    //     isPlaying? audioPlayer.current.play() : audioPlayer.current.pause();
-
-    // }, [isPlaying]
-    // );
-
-
-
     useEffect(() => { //takes a function as its first parameter, array as second parameter function is what we want it to do
         const seconds = Math.floor(audioPlayer.current.duration);
         setDuration (seconds); //coming from variable set 1 line above ^
@@ -215,8 +221,8 @@ useEffect(() => { //function checks everytime we want to see if we want to go to
     
 
     return (
+    
         <div className = "Audioplayer">
-            <Link href = 'https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css' rel = "sytlesheet" />
             
             <audio src = {SongList[currentSongIndex].src} ref = {audioPlayer} preload = "metadata" >
             </audio>
@@ -230,6 +236,8 @@ useEffect(() => { //function checks everytime we want to see if we want to go to
             Now Playing: 
             <br />
             {SongList[currentSongIndex].title}
+            <br/>
+            <div class = "test" songs ={songs} > {songs} </div>
             {/* {songs[currentSongIndex].title} */} 
             {/* Not necessary line above, but keeping around in case SongList method breaks and need to keep songs local to audioplayer */}
             </div>

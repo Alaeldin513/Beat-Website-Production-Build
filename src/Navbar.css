@@ -26,9 +26,10 @@
   .logopic {
     cursor: pointer;
     font-size: 5rem;
-    transform: translate(0, 41%);
-    background: none;
-    color: rgb(235, 157, 13);
+    transform: translate(0, 89%);
+    color: rgb(163, 37, 146,0.18);
+    background: radial-gradient(circle, rgba(235,233,13,0.9) 0%, rgba(153,101,21,0.9) 100%);
+    border-radius: 18%;
     display: flex;
     text-decoration: none;
     align-items: center;
@@ -127,7 +128,7 @@
       top: 60%;
       left: 50%;
       text-decoration: none;
-      transform: translate(-4rem, -3rem);
+      transform: translate(-4rem, 3rem);
       color: white;
       }
      
@@ -138,6 +139,25 @@
          transform: translate(-100rem, -200rem);
          display: none;
        }   
+
+       .Upload {
+        font-size: 3rem;
+        background: none;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        text-decoration: none;
+        transform: translate(-4rem, -3rem);
+        color: white;
+        }
+       
+         .Not-Upload {
+           background: transparent;
+           color: transparent;
+           pointer-events: none;
+           transform: translate(-100rem, -200rem);
+           display: none;
+         }   
 
 
 
@@ -186,9 +206,8 @@
   .BurgerMenu {
     display: flex;
     position: absolute;
-    width: 100%;
-    justify-content: right;
-    padding-right: 4rem;
+    width: 64px;
+    right: 10%;
     background: transparent;
     text-decoration: none;
     color:black;
@@ -209,11 +228,11 @@
   .BurgerChange {
     position: absolute;
     display: flex;
-    width: 100%;
+    
     justify-content: right;
-    right: 7.5rem;
+    right: 9.5%;
     font-size: 4.5rem;
-    transform: translate(3.7rem, 0%);
+    transform: translate(-3%, 0%);
     background: none;
     
     text-decoration: none;
@@ -326,11 +345,11 @@
 
 
     .BurgerMenu {
-      position: absolute;
       display: flex;
-      width: 100%;
+      position: absolute;
+      width: 64px;
+      right: 10%;
       align-items: center;
-      justify-content: right;
       background: none;
       text-decoration: none;
       color: black;
@@ -344,7 +363,7 @@
     .BurgerChange {
       position: absolute;
       display: flex;
-      width: 100%;
+      right: 9.5%;
       align-items: center;
       justify-content: right;
       background: none;
@@ -415,7 +434,7 @@
           top: 60%;
           left: 50%;
           text-decoration: none;
-          transform: translate(-4rem, -5rem);
+          transform: translate(-4rem, -4rem);
           color: white;
           }
          
@@ -427,17 +446,24 @@
              transform: translate(-100rem, -200rem);
            }  
 
-
-    .Pricing {
-      font-size: 2.8rem;
-      background: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-4rem, 24rem);
-      text-decoration: none;
-      color: white;
-    }
+           .Upload {
+            font-size: 3rem;
+            background: none;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            text-decoration: none;
+            transform: translate(-4rem, -5rem);
+            color: white;
+            }
+           
+             .Not-Upload {
+               background: transparent;
+               color: transparent;
+               pointer-events: none;
+               z-index: -50;
+               transform: translate(-100rem, -200rem);
+             }  
     
     .logopic {
       position: flex block;
@@ -452,7 +478,7 @@
     z-index: 6;
     position: absolute;
     justify-self: start;
-    left: 10px;
+    left: 5%;
     cursor: pointer;
     font-size: 0.9rem;
     background: none;
@@ -471,7 +497,7 @@
     z-index: 6;
     position: absolute;
     justify-self: start;
-    left: 10px;
+    left: 5%;
     cursor: pointer;
     font-size: 0.9rem;
     background: none;

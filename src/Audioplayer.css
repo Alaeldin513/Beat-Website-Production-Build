@@ -5,7 +5,7 @@
     display: flex;
     background: none;
     position: absolute;
-    top: 54%;
+    top: 50%;
     justify-content: center;
     justify-self: center;
     text-decoration: none;
@@ -201,7 +201,7 @@ bottom: 0;
  text-decoration: none;
  color: rgb(211, 0, 211);
  font-family: "Univers LT W01_67 Bold_1476016",Helvetica,Arial,sans-serif;
- width: 30vh;
+ width: 40vh;
  text-align: center;
  display: inline-block;
  letter-spacing: 0.5px; 
