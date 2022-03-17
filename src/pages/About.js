@@ -23,7 +23,7 @@ export default function About() {
     <div className = "box">
     
     <div className = "starterText" >
-      New & Improved! 
+      New & Improved, MERN up and Running SOON! 
     </div>
 
     <div className = "starterText2">

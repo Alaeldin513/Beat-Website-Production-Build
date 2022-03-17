@@ -60,7 +60,7 @@
     width: 100%;
     padding: 5px 8px;
     margin-bottom: 5px;
-    background: rgb(255, 160, 65)
+    background: rgb(255, 255, 65)
 }
 
 .artistInput {
@@ -68,21 +68,29 @@
     width: 100%;
     padding: 5px 8px;
     margin-bottom: 5px;
-    background: rgb(255, 160, 65)
+    background: rgb(255, 255, 65)
+}
+.moodInput {
+    font-size: 18px;
+    width: 100%;
+    padding: 5px 8px;
+    margin-bottom: 5px;
+    background: rgb(255, 255, 65)
 }
 
 
 .uploadButton {
-    background: rgb(255, 160, 65);
-    border: 1px solid rgb(255, 160, 65);
+    background: rgb(255, 255, 65);
+    border: 1px solid black;
     font-size: 18px;
+    padding: 5px 8px;
     text-align: center;
     align-items: center;
     display: flex;
     border-radius: 3%;
     position: relative;
     letter-spacing: 1px;
-    width: 100%;
+    width: 50%;
     justify-content: center;
 
 }
@@ -102,4 +110,13 @@ text-align: center;
 .imgHolder {
    stroke-width: -1px;
 
+}
+
+#musicUpload {
+    margin-left: 20%;
+    margin-bottom: 42px;
+}
+
+#imgUpload {
+margin-left: 20%;
 }

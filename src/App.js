@@ -12,10 +12,12 @@ import Upload from './pages/Upload'
 import LandingPage from './LandingPage'
 import SongList from './SongList'
 
+import Context from './context/Context'
+
 
 
 function App() {
-
+  
   
   return (
     <>

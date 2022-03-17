@@ -38,12 +38,14 @@ function Navbar() {
                         {/* <a href='http://localhost:3000/' className= {click ? 'whitetlname' : 'tlname'} >
                          MAA Beats  
                         </a> */}
+                        
                         <a href='/' className= 'logopic' >
-                            <GiAnt/> 
+                            <GiAnt/> "Logo Here"
                         </a>
+                        
 
                         <a href='/' className= {click ? 'whitetlname' : 'tlname'} >
-                         Beats by THE Ant Man 
+                         Beats by "Producer Name Here" 
                           </a>
                         <a  className ={click ? 'BurgerChange' : 'BurgerMenu'} onClick={handleClick} >
                             { click ? <GoX/> : <GiHamburgerMenu/> }

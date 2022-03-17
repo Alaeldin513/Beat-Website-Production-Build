@@ -26,9 +26,9 @@
   .logopic {
     cursor: pointer;
     font-size: 5rem;
-    transform: translate(0, 89%);
+    transform: translate(0, 40%);
     color: rgb(163, 37, 146,0.18);
-    background: radial-gradient(circle, rgba(235,233,13,0.9) 0%, rgba(153,101,21,0.9) 100%);
+    /* background: radial-gradient(circle, rgba(235,233,13,0.9) 0%, rgba(153,101,21,0.9) 100%); */
     border-radius: 18%;
     display: flex;
     text-decoration: none;
