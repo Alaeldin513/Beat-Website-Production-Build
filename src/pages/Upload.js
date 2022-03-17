@@ -35,6 +35,7 @@ const handleSubmit = async (e) => {
             imgFile
         };
         console.log({newUpload})
+        console.log({newUpload.songFile})
     if (songFile && imgFile && title && artist && mood) {
         try {
             await axios.post(PF, newUpload)
