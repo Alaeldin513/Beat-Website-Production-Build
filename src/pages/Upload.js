@@ -22,23 +22,25 @@ const [songFile, setSongFile] = useState(null);
 const [imgFile, setImgFile] = useState(null);
 
 const {user, dispatch} = useContext(Context);
-const PF = "http://localhost:8080/songs";
+const PF = "http://localhost:8080/upload";
 
 
 const handleSubmit = async (e) => {
         e.preventDefault();
-        const newUpload = {
-            title,
-            artist,
-            mood,
-            songFile,
-            imgFile
-        };
-        console.log({newUpload})
+
+        const data = new FormData();
+
+        data.append('fileUpload', songFile);
+        data.append('fileUpload', imgFile);
+        data.append('mood', mood);
+        data.append('artist', artist);
+        data.append('title', title);
+
 
     if (songFile && imgFile && title && artist && mood) {
         try {
-            await axios.post(PF, newUpload)
+            console.log("sending files")
+            await axios.post(PF, data)
         } catch (err) {}
     }
     else {
@@ -52,7 +54,9 @@ const handleSubmit = async (e) => {
                 {/* action = "../../post" method = "post" */}
                 <h1 class = "uploadTitle"> Please Fill out Track Info: </h1>
             
-            <form className = "uploadForm" enctype = "multipart/form-data"> 
+            <form className = "uploadForm" enctype = "multipart/form-data" 
+                    //action = "/upload" method = "POST"
+                    > 
                 <div class = "fieldContainer">
                     <label className = "newTrack"> Title* </label>
                         <br></br>
@@ -62,6 +66,7 @@ const handleSubmit = async (e) => {
                     placeholder = "New Track"
                     ref = {trackRef}
                     onChange = {e=>setTitle(e.target.value)}
+                    name = "fileUpload"
                     value = {title}
                     />    
                         <br></br>
@@ -73,6 +78,7 @@ const handleSubmit = async (e) => {
                     className = "artistInput"
                     placeholder = "Artist Name"
                     ref = {artistRef}
+                    name = "fileUpload" 
                     onChange = {e=>setArtist(e.target.value)}
                     value = {artist}
                     />    
@@ -85,6 +91,7 @@ const handleSubmit = async (e) => {
                     className = "moodInput"
                     placeholder = "One word description"
                     ref = {moodRef}
+                    name = "fileUpload" 
                     onChange = {e=>setMood(e.target.value)}
                     value = {mood}   
                     />    
@@ -103,8 +110,9 @@ const handleSubmit = async (e) => {
                 accept="audio/*" 
                 id="musicUpload"
                 type="file" 
-                ref = {audioRef}  
+                ref = {audioRef}
                 onChange = {(e) => setSongFile(e.target.files[0])}
+                name = "fileUpload"
                 />
                 </div>
                 
@@ -116,16 +124,17 @@ const handleSubmit = async (e) => {
                 <br/>
                 <input 
                 accept="image/*" 
-                id="imgUpload"
+                action = "/upload"
+                id="fileUpload"
                 type="file" 
                 ref = {imageRef} 
+                name = "imgUpload"
                 onChange = {(e) => setImgFile(e.target.files[0])}
                  />
                 </div>
                
                 </div>
             <button class = "uploadButton" type = "submit" onClick = {handleSubmit}> + Upload </button>
-            <div> </div>
             </form>
             </div> 
 
