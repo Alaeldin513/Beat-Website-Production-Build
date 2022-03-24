@@ -22,6 +22,8 @@ const [songFile, setSongFile] = useState(null);
 const [imgFile, setImgFile] = useState(null);
 
 const {user, dispatch} = useContext(Context);
+
+//The server URI we want to send our post data to
 const PF = "http://localhost:8080/upload";
 
 
