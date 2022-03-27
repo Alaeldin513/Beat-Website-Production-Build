@@ -5,14 +5,14 @@ import axios from "axios"
 function MainSec () {
     const [posts, setPosts] = useState([]);
 
-    useEffect(()=> {
-        const fetchPosts = async()=> {
-            const res = await axios.get("/login")
-            console.log(res)
-            setPosts(res.data);
-        }
-        fetchPosts();
-    },[])
+    // useEffect(()=> {
+    //     const fetchPosts = async()=> {
+    //         const res = await axios.get("/login")
+    //         console.log(res)
+    //         setPosts(res.data);
+    //     }
+    //     fetchPosts();
+    // },[])
     
 
     return (

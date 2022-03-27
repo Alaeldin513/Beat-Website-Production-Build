@@ -20,6 +20,7 @@ const [artist,setArtist] = useState(null);
 const [mood,setMood] = useState(null);
 const [songFile, setSongFile] = useState(null);
 const [imgFile, setImgFile] = useState(null);
+const [status, setStatus] = useState(undefined);
 
 const {user, dispatch} = useContext(Context);
 
@@ -37,16 +38,21 @@ const handleSubmit = async (e) => {
         data.append('mood', mood);
         data.append('artist', artist);
         data.append('title', title);
+        data.append('songFile', songFile.name)
+        data.append('imgFile', imgFile.name)
+        
 
 
     if (songFile && imgFile && title && artist && mood) {
         try {
-            console.log("sending files")
+            setStatus({type: 'success'})
             await axios.post(PF, data)
-        } catch (err) {}
+        } catch (err) {
+            setStatus({type: 'error' , err });
+        }
     }
     else {
-        console.log("message for not filling all fields")
+        setStatus({type: 'error'});
     }    
 }
 
@@ -137,6 +143,10 @@ const handleSubmit = async (e) => {
                
                 </div>
             <button class = "uploadButton" type = "submit" onClick = {handleSubmit}> + Upload </button>
+            {status?.type === 'success' && <p> Successful Upload!</p>}
+            {status?.type === 'error' && (
+                <p> Unsuccessful Upload, make sure to fill out all fields </p>
+            )}
             </form>
             </div> 
 
