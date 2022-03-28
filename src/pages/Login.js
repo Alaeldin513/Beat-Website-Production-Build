@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import './Login.css'
 import axios from "axios";
 import { Context } from "../context/Context"
+import './Register.css'
+import {Register} from './Register'
 
 
 export default function Login() {

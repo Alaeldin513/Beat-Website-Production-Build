@@ -2,30 +2,30 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import './Login.css'
 import './Register.css'
 import axios from "axios";
-import { Context } from "../context/Context"
+//import { Context } from "../context/Context"
 
 
 export default function Register() {
     const userRef = useRef();
     const passwordRef = useRef();
     const agreementRef = useRef();
-    const { dispatch, isFetching} = useContext(Context);
+    //const { dispatch, isFetching} = useContext(Context);
 
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        dispatchEvent({ type: "LOGIN_START"});
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     dispatchEvent({ type: "LOGIN_START"});
 
-        try {
-            const res = await axios.post("/auth/login", {
-                username: userRef.current.value,
-                password: passwordRef.current.value
-            });
-            dispatchEvent({ type: "LOGIN_SUCCESS", payload: res.data});
-        } catch (err) {
-            dispatch({ type: "LOGIN_FAILURE"});
-        }
-    };
+    //     try {
+    //         const res = await axios.post("/auth/login", {
+    //             username: userRef.current.value,
+    //             password: passwordRef.current.value
+    //         });
+    //         dispatchEvent({ type: "LOGIN_SUCCESS", payload: res.data});
+    //     } catch (err) {
+    //         dispatch({ type: "LOGIN_FAILURE"});
+    //     }
+    // };
 
 
 return(
@@ -42,7 +42,7 @@ return(
             
         </h1>
 
-        <form className = "loginForm" onSubmit = {handleSubmit}>
+        <form className = "loginForm" >
             <label className = "usernameFormat"> Your username </label>
             <br></br>
             <input 
@@ -91,7 +91,7 @@ return(
             /> 
             <span class = 'checkboxLabel'>
             I have read and agree to the 
-            <a target = "_blank" href = "/https://nextdaybeats.com/terms-of-service">Terms of service & privacy policy </a>
+            <a target = "_blank" href = "">Terms of service & privacy policy </a>
             </span>
             </label>
 
