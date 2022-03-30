@@ -20,7 +20,10 @@ const [artist,setArtist] = useState(null);
 const [mood,setMood] = useState(null);
 const [songFile, setSongFile] = useState(null);
 const [imgFile, setImgFile] = useState(null);
+const [bpm, setBPM] = useState(null);
+const [scale, setScale] = useState(null);
 const [status, setStatus] = useState(undefined);
+
 
 const {user, dispatch} = useContext(Context);
 
@@ -38,6 +41,8 @@ const handleSubmit = async (e) => {
         data.append('mood', mood);
         data.append('artist', artist);
         data.append('title', title);
+        data.append('bpm', bpm);
+        data.append('scale', scale);
         data.append('songFile', songFile.name)
         data.append('imgFile', imgFile.name)
         
@@ -104,7 +109,31 @@ const handleSubmit = async (e) => {
                     value = {mood}   
                     />    
                         <br></br>
-                        
+                    
+                        <label className = "newTrack"> BPM </label>
+                        <br></br>
+                    <input 
+                    type = "number"
+                    className = "bpmInput"
+                    placeholder = "Number, how fast your head bobs"
+                    
+                    name = "fileUpload" 
+                    onChange = {e=>setBPM(e.target.value)}
+                    value = {bpm}   
+                    />    
+                        <br></br>
+                        <label className = "newTrack"> Scale of Beat </label>
+                        <br></br>
+                    <input 
+                    type = "text"
+                    className = "scaleInput"
+                    placeholder = "e.g. G major"
+                    
+                    name = "fileUpload" 
+                    onChange = {e=>setScale(e.target.value)}
+                    value = {scale}   
+                    />    
+                        <br></br>
                 </div>
 
                 <div class = "fileContainer">

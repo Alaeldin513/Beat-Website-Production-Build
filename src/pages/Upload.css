@@ -78,6 +78,22 @@
     background: rgb(255, 255, 65)
 }
 
+.bpmInput {
+    font-size: 18px;
+    width: 100%;
+    padding: 5px 8px;
+    margin-bottom: 5px;
+    background: rgb(255, 255, 65)
+}
+
+.scaleInput {
+    font-size: 18px;
+    width: 100%;
+    padding: 5px 8px;
+    margin-bottom: 28px;
+    background: rgb(255, 255, 65)
+}
+
 
 .uploadButton {
     background: rgb(255, 255, 65);

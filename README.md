@@ -1,5 +1,5 @@
 https://www.nextdaybeats.com 
-(work in progress)
+(work in progress) - this is the frontend repository hosted on Netlify
 
 To-do:
 -Add backend for sessions, dB

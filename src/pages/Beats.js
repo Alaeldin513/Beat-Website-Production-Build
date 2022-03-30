@@ -153,36 +153,42 @@ export function Beats() {
     }, [currentTime]);
 
 
+    //Accessing Files from S3 Storage Logic:
+
+
+
     return(
             <div className = 'beatsMenu'>
                 <ul class="playlist">
                     <li className = "layoutTitles"> 
                         <p1 class = "titleInformation" style = {{marginLeft: "0px"}}> Title </p1>
                         <p1 class = "titleInformation" id = 'iphoneHider'> Time </p1>
-                        <p1 class = "titleInformation" id = 'iphoneHider'> BPM </p1>
+                        <p1 class = "titleInformation" id = 'iphoneHider'> bpm </p1>
                         <p1 class = "titleInformation" id = 'iphoneHider'> Mood </p1>
                         <p1 class = "titleInformation" id = 'iphoneHider'> Artist </p1>
+                        <p1 class = "titleInformation" id = 'iphoneHider'> Scale </p1>
                     </li>
                     
                     {SongList.map((SongList, index) => (
                     <li className = "layoutRow"> 
                         {/* onClick = "function(); function()" */}
                         <img className = "rowItems_img" src = {SongList.img_src} onClick = {togglePlayPause} />
-                        <div className = "rowItems" style = {{cursor: "pointer"}} onClick = {() => {clickIndexChanger(index)}}> {SongList.title} </div>
-                        <div className = "rowItems" id = 'iphoneHider'> {SongList.time} </div> 
-                        <div className = "rowItems" id = 'iphoneHider'> - </div>
-                        <div className = "rowItems" id = 'iphoneHider' > {SongList.mood} </div>    
-                        <div className = "rowItems" id = 'iphoneHider' >
-                             Toni 
-                        </div>  
+                        <div className = "rowItems" style = {{cursor: "pointer" ,transform:'translate(-2px,0)'}} onClick = {() => {clickIndexChanger(index)}}> {SongList.title} </div>
+                        <div className = "rowItems" id = 'iphoneHider' style = {{transform:'translate(-1.5px,0)'}}> {SongList.time} </div> 
+                        <div className = "rowItems" id = 'iphoneHider'style = {{transform:'translate(-1.5px,0)'}}> - </div>
+                        <div className = "rowItems" id = 'iphoneHider'style = {{transform:'translate(-1.5px,0)'}} > {SongList.mood} </div>    
+                        <div className = "rowItems" id = 'iphoneHider'style = {{transform:'translate(-1.5px,0)'}} > {SongList.artist} </div>
+                        <div className = "rowItems" id = 'iphoneHider'style = {{transform:'translate(-1.5px,0)'}} > C# Major</div>  
+                             
+                         
                     </li> 
                     ))}
                 </ul>
                     <input type = "range" className = "progressBar" defaultValue = "0" ref = {progressBar} onChange = {changeRange} />
-                <footer className = "bottomPlaybar"> 
+                <div className = "bottomPlaybar"> 
                         <div className = "playerInfo">
                             <img className = "playerImg" src = {SongList[currentSongIndex].img_src}/>
-
+                            <div> Now playing: {SongList[currentSongIndex].title} </div>
 
                         </div>
                         <div className = "playerButtons">
@@ -201,7 +207,7 @@ export function Beats() {
 
                         </div>
                         <div className = "playerActions"></div>
-            </footer>    
+            </div>    
             </div> 
 
             
