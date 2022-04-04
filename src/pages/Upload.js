@@ -46,8 +46,7 @@ const handleSubmit = async (e) => {
         data.append('songFile', songFile.name)
         data.append('imgFile', imgFile.name)
         
-
-
+        
     if (songFile && imgFile && title && artist && mood) {
         try {
             setStatus({type: 'success'})
@@ -179,13 +178,6 @@ const handleSubmit = async (e) => {
             </form>
             </div> 
 
-
-
-
-
         );
-    
-    
-    
 }
     

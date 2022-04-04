@@ -1,5 +1,5 @@
 import React, { useState, useEffect,useRef } from 'react';
-import {SongList} from '../SongList'
+import {SongList , getNewSong} from '../SongList'
 import {AudioPlayer} from '../Audioplayer'
 import '../Audioplayer.css';
 import Navbar from '../Navbar';
@@ -153,7 +153,6 @@ export function Beats() {
     }, [currentTime]);
 
 
-    //Accessing Files from S3 Storage Logic:
 
 
 
@@ -206,7 +205,7 @@ export function Beats() {
                             </button> 
 
                         </div>
-                        <div className = "playerActions"></div>
+                        <div className = "playerActions" onClick = {getNewSong} > getNewSong  </div>
             </div>    
             </div> 
 

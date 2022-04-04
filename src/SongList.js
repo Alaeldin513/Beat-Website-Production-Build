@@ -1,3 +1,22 @@
+//Accessing Files from S3 Storage Logic:
+import React, { useState, useEffect,useRef, useContext } from 'react';
+import axios from "axios"
+const PF = "http://localhost:8080/download"
+
+export const getNewSong = async () => {
+    try {
+    const res = await axios.get(PF, {
+
+    });
+    const newSong = res.data
+    console.log({newSong})
+    } catch (err) {
+        console.error(err)
+    }
+}
+
+
+
 export const SongList = [
     {
         title: "The Funk",
@@ -177,10 +196,11 @@ export const SongList = [
         src: "../beats/24karat prod.mp3",
         mood: "Hyper",
         time: "2:31"
-        }        
+        }     
 ]
 
 export default {
         SongList,
+        getNewSong
 }
 

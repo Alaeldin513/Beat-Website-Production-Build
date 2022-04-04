@@ -9,12 +9,43 @@ export default function Register() {
     const userRef = useRef();
     const passwordRef = useRef();
     const agreementRef = useRef();
+
+    const [artistName, setArtistName] = useState("");
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [checkBox, setCheckBox] = useState(false);
+    const[error, setError] = useState(false)
+
+    //Stateless button true/false changer function for our checkbox
+    const toggleCheckBox = () => {
+        const prevValue = checkBox;
+        setCheckBox(!prevValue);
+    }
     //const { dispatch, isFetching} = useContext(Context);
 
-
+    // const PF = "http://localhost:8080/download"
+    
     // const handleSubmit = async (e) => {
     //     e.preventDefault();
-    //     dispatchEvent({ type: "LOGIN_START"});
+    //     setError(false);
+
+    //     if(password === confirmPassword && checkBox === true
+    //         && password != "" && email != "" && artistName != "")
+    //     try {
+    //         const res = await axios.post(PF,   {
+    //         artistName,
+    //         email,
+    //         password,
+
+    //         });
+    //         res.data && window.location.replace("/login")
+    //     }
+
+    //     catch (err) {
+    //         setError(true);
+    //     }
+    // };    
 
     //     try {
     //         const res = await axios.post("/auth/login", {
@@ -42,7 +73,7 @@ return(
             
         </h1>
 
-        <form className = "loginForm" >
+        <form className = "loginForm"  >
             <label className = "usernameFormat"> Your username </label>
             <br></br>
             <input 
@@ -50,6 +81,7 @@ return(
                 className = "loginInput"
                 placeholder = "Set a username for your profile"
                 ref = {userRef}
+                onChange = { (e) => setArtistName(e.target.value) }
             />    
             <br></br>
 
@@ -60,6 +92,7 @@ return(
                 className = "loginInput"
                 placeholder = "Type your email"
                 ref = {userRef}
+                onChange = { (e) => setEmail(e.target.value) }
             />    
             <br></br>
 
@@ -71,6 +104,7 @@ return(
                 className = "loginInput"
                 placeholder = "Type your password"
                 ref = {passwordRef}
+                onChange = { (e) => setPassword(e.target.value) }
             /> 
             <br>
             </br>  
@@ -81,6 +115,7 @@ return(
                 className = "loginInput"
                 placeholder = "Type your password again"
                 ref = {passwordRef}
+                onChange = { (e) => setConfirmPassword(e.target.value) }
             /> 
 
             <label className = "checkboxFormat">
@@ -88,6 +123,7 @@ return(
                 type = "checkbox"
                 className = "signupAgreement"
                 ref = {agreementRef}
+                onChange = {toggleCheckBox}
             /> 
             <span class = 'checkboxLabel'>
             I have read and agree to the 
