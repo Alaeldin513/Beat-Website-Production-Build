@@ -6,7 +6,6 @@ const PF = "http://localhost:8080/download"
 export const getNewSong = async () => {
     try {
     const res = await axios.get(PF, {
-
     });
     const newSong = res.data
     console.log({newSong})

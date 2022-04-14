@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import './Login.css'
 import './Register.css'
 import axios from "axios";
+const crypto = require('crypto');
 //import { Context } from "../context/Context"
 
 
@@ -10,12 +11,12 @@ export default function Register() {
     const passwordRef = useRef();
     const agreementRef = useRef();
 
-    const [artistName, setArtistName] = useState("");
-    const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const [artistName, setArtistName] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [confirmPassword, setConfirmPassword] = useState(null);
     const [checkBox, setCheckBox] = useState(false);
-    const[error, setError] = useState(false)
+    const[error, setError] = useState(undefined)
 
     //Stateless button true/false changer function for our checkbox
     const toggleCheckBox = () => {
@@ -24,44 +25,49 @@ export default function Register() {
     }
     //const { dispatch, isFetching} = useContext(Context);
 
-    // const PF = "http://localhost:8080/download"
+    const PF = "http://localhost:8080/user/register"
     
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     setError(false);
+    
 
-    //     if(password === confirmPassword && checkBox === true
-    //         && password != "" && email != "" && artistName != "")
-    //     try {
-    //         const res = await axios.post(PF,   {
-    //         artistName,
-    //         email,
-    //         password,
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(password + confirmPassword + checkBox + email + artistName)
+        
+        if(password === confirmPassword && checkBox === true
+        && password != "" && email != "" && artistName != "") {
+        hashSlinger();  
 
-    //         });
-    //         res.data && window.location.replace("/login")
-    //     }
+        
+        try {
+            setError({type: 'success'});
+            await axios.post(PF, {
+                artistName,
+                email,
+                password
+            })  &&  
+            window.location.replace("/login")
+        }
+        catch (err) {
+            console.log("error with post")
+        }
+        }
+        else {
+            setError({type: 'error'});
+            console.log("please check to make sure fields are accurate")
+        }
+    };    
 
-    //     catch (err) {
-    //         setError(true);
-    //     }
-    // };    
+    const hashSlinger = async => {
+        const salt = crypto.randomBytes(16).toString('hex');
+        setPassword(crypto.pbkdf2Sync((password, salt, 1000, 64, 'sha256')).toString('hex'));
+        setEmail(crypto.pbkdf2Sync((email, salt, 1000, 64, 'sha256')).toString('hex'));
+        setConfirmPassword(crypto.pbkdf2Sync((confirmPassword, salt, 1000, 64, 'sha256')).toString('hex'));
+        
+    }
 
-    //     try {
-    //         const res = await axios.post("/auth/login", {
-    //             username: userRef.current.value,
-    //             password: passwordRef.current.value
-    //         });
-    //         dispatchEvent({ type: "LOGIN_SUCCESS", payload: res.data});
-    //     } catch (err) {
-    //         dispatch({ type: "LOGIN_FAILURE"});
-    //     }
-    // };
+    return(
 
-
-return(
-
-<div className = "loginPage">
+    <div className = "loginPage">
     <section className = "registerSection">
         <header className = "websiteLogo">
             <a href = "/" >
@@ -73,14 +79,15 @@ return(
             
         </h1>
 
-        <form className = "loginForm"  >
+        <form className = "loginForm"  enctype = "multipart/form-data" >
             <label className = "usernameFormat"> Your username </label>
             <br></br>
             <input 
                 type = "text"
                 className = "loginInput"
-                placeholder = "Set a username for your profile"
+                placeholder = "Type your artist name"
                 ref = {userRef}
+                name = "username"
                 onChange = { (e) => setArtistName(e.target.value) }
             />    
             <br></br>
@@ -92,6 +99,7 @@ return(
                 className = "loginInput"
                 placeholder = "Type your email"
                 ref = {userRef}
+                name = "email"
                 onChange = { (e) => setEmail(e.target.value) }
             />    
             <br></br>
@@ -104,6 +112,7 @@ return(
                 className = "loginInput"
                 placeholder = "Type your password"
                 ref = {passwordRef}
+                name = "password"
                 onChange = { (e) => setPassword(e.target.value) }
             /> 
             <br>
@@ -132,10 +141,14 @@ return(
             </label>
 
 
-            <button className = "loginButton" type = "submit">
+            <button className = "loginButton" type = "submit" onClick = {handleSubmit}>
                 Sign up
             </button>
-
+            
+            {error?.type === 'success' && <p> Successful Upload!</p>}
+            {error?.type === 'error' && (
+                <p> Unsuccessful registry, make sure all fields are correct </p>
+            )}    
         </form>
         
         {/* <h2 class = "hr1">
@@ -154,7 +167,7 @@ return(
         
     </section>
 
-</div>
+    </div>
 
 
 );

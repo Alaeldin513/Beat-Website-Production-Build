@@ -40,7 +40,7 @@ function Navbar() {
                         </a> */}
                         
                         <a href='/' className= 'logopic' >
-                            <GiAnt/> "Logo Here"
+                            "<GiAnt/>"
                         </a>
                         
 

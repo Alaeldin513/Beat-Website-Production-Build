@@ -2,6 +2,7 @@
     
 }
 
+/* // #782bcd #fcff00 #00afff #ffa700 */
 
 .uploadMenu {
     position: absolute;
@@ -12,7 +13,7 @@
     justify-content: top;
     transition: all 0.5s ease;
     /* flex-direction: column;  */
-   background: skyblue;
+   background: #00afff;
    font-family: "Univers LT W01_67 Bold_1476016",Helvetica,Arial,sans-serif;
    letter-spacing: 1px;
   }
@@ -60,7 +61,7 @@
     width: 100%;
     padding: 5px 8px;
     margin-bottom: 5px;
-    background: rgb(255, 255, 65)
+    background: rgb(255, 255, 100)
 }
 
 .artistInput {
@@ -68,14 +69,14 @@
     width: 100%;
     padding: 5px 8px;
     margin-bottom: 5px;
-    background: rgb(255, 255, 65)
+    background: rgb(255, 255, 100)
 }
 .moodInput {
     font-size: 18px;
     width: 100%;
     padding: 5px 8px;
     margin-bottom: 5px;
-    background: rgb(255, 255, 65)
+    background: rgb(255, 255, 100)
 }
 
 .bpmInput {
@@ -83,7 +84,7 @@
     width: 100%;
     padding: 5px 8px;
     margin-bottom: 5px;
-    background: rgb(255, 255, 65)
+    background: rgb(255, 255, 100)
 }
 
 .scaleInput {
@@ -91,12 +92,12 @@
     width: 100%;
     padding: 5px 8px;
     margin-bottom: 28px;
-    background: rgb(255, 255, 65)
+    background: rgb(255, 255, 100)
 }
 
 
 .uploadButton {
-    background: rgb(255, 255, 65);
+    background: rgb(255, 255, 100);
     border: 1px solid black;
     font-size: 18px;
     padding: 5px 8px;

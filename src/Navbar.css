@@ -1,5 +1,7 @@
-.navbar {
 
+
+.navbar {
+  --main-color: rgb(255, 65, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,16 +12,18 @@
     z-index: 6;
     font-family: "Univers LT W01_67 Bold_1476016",Helvetica,Arial,sans-serif;
   }
+  a:hover {
+  color: rgb(255, 65, 255);
+  }
 
   .whitetlname:hover {
-    color: solid rgb(163, 37, 146);
+    color: var(--main-color);
     transition: all 0.2s ease-out;
   }
 
   .tlname:hover {
-    color: solid rgb(163, 37, 146);
+    color: var(--main-color);
     transition: all 0.2s ease-out;
-    
     
   }
 
@@ -27,7 +31,7 @@
     cursor: pointer;
     font-size: 5rem;
     transform: translate(0, 40%);
-    color: rgb(163, 37, 146,0.18);
+    color: var(--main-color);
     /* background: radial-gradient(circle, rgba(235,233,13,0.9) 0%, rgba(153,101,21,0.9) 100%); */
     border-radius: 18%;
     display: flex;
@@ -39,7 +43,7 @@
   }
 
   .logopic:hover {
-    color: 4px solid rgb(163, 37, 146);
+    color: var(--main-color);
     transition: all 0.2s ease-out;    
   }
 
@@ -162,7 +166,7 @@
 
 
   .Beats:hover {
-    border-bottom: 4px solid rgb(163, 37, 146);
+    color: var(--main-color);
     transition: all 0.2s ease-out;
   }
 
@@ -184,7 +188,7 @@
     transform: translate(-100rem, -200rem);
   }
   .Pricing:hover {
-    border-bottom: 4px solid rgb(163, 37, 146);
+    color: var(--main-color);
     transition: all 0.2s ease-out;
   }
 
@@ -199,10 +203,6 @@
     text-decoration: none;
   }
 
-  a:hover {
-    color: rgb(163, 37, 146);
-;    opacity: 0.5;
-  }
   .BurgerMenu {
     display: flex;
     position: absolute;

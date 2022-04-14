@@ -8,6 +8,7 @@ import {GrPlayFill} from 'react-icons/gr'
 import {GrPauseFill} from 'react-icons/gr'
 import {SongList} from './SongList'
 import axios from 'axios';
+import {Wave} from "@foobar404/wave";
 
 //includes audioplayer functionality and all songs that are necessary to load
 
@@ -41,6 +42,7 @@ export function AudioPlayer(props) {
     const audioPlayer = useRef(); //reference our audio component
     const progressBar = useRef(); //reference to our slider
     const animationRef = useRef(); //references animation of slider
+    const waveRef = useRef();
     
     //   function getRandomInt(min, max) {
     //     min = Math.ceil(min);
@@ -81,6 +83,18 @@ export function AudioPlayer(props) {
             return (false);
         }
     }
+
+
+    const waveStart = () => {
+        let audioElement = SongList[currentSongIndex].src;
+        let canvasElement = document.getElementsByClassName('canvas');
+        const ctx = canvasElement[0].getContext('2d'); 
+        console.log(ctx)
+        let wave = new Wave(audioElement, ctx);
+    }
+    
+
+    
 
     //not sure if necessary, firefox/Ios workaround attempt
     const catchError = () => { 
@@ -222,9 +236,7 @@ useEffect(() => { //function checks everytime we want to see if we want to go to
     
 
     return (
-    
         <div className = "Audioplayer">
-            
             <audio src = {SongList[currentSongIndex].src} ref = {audioPlayer} preload = "metadata" >
             </audio>
 

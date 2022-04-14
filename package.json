@@ -5,10 +5,12 @@
   "homepage": "https://nextdaybeats.com",
   "private": true,
   "dependencies": {
+    "@foobar404/wave": "^2.0.3",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.26.0",
+    "bcrypt": "^5.0.1",
     "dotenv": "^16.0.0",
     "howler": "^2.2.3",
     "mongodb": "^4.4.1",

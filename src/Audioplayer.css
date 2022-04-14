@@ -1,5 +1,5 @@
 .Audioplayer {
-    --primary: rgb(185, 0, 185);
+    --primary: #782bcd;
     --secondary: orangered;
     z-index:1;
     display: flex;
@@ -29,12 +29,12 @@
 }
 
 .playpause {
-   background: var(--primary);
+   background: #fcff00;
    border: none;
    border-radius: 50%;
    width: 75px;
    height: 75px; 
-   font-size: 50px;
+   font-size: 30px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -191,16 +191,16 @@
 }
 
 .currentlyPlaying {
-    font-size: 1.89rem;
-    width:100%;
-    border: none;
+font-size: 1.89rem;
+width:100%;
+border: none;
  background: none;
  position: absolute;
  display: flex;
 bottom: 0;
  text-decoration: none;
- color: rgb(211, 0, 211);
- font-family: "Univers LT W01_67 Bold_1476016",Helvetica,Arial,sans-serif;
+ color: #782bcd;
+font-family: "Univers LT W01_67 Bold_1476016",Helvetica,Arial,sans-serif;
  width: 40vh;
  text-align: center;
  display: inline-block;
@@ -216,7 +216,7 @@ bottom: 0;
     left: 50%;
     text-decoration: none;
     transform: translate(-6%, 10rem);
-    color: rgb(185, 0, 185);
+    color: #782bcd;
     font-family: 'gotham.md';
     width: 100vh; 
 }
@@ -233,8 +233,8 @@ bottom: 0;
 } */
 
 .progressbar {
- --bar-bg: rgb(211, 0, 211);
- --seek-before-width: 0;
+ --bar-bg: #782bcd;
+--seek-before-width: 0;
  --seek-before-color: orange;
  --knobby:     blue;
  --selectedKnobby: cyan;
@@ -291,7 +291,7 @@ bottom: 0;
     }
     
     .playpause {
-       background: var(--primary);
+       background: #fcff00;
        border: none;
        border-radius: 100%;
        width: 75px;
@@ -326,7 +326,7 @@ bottom: 0;
      display: flex;
     bottom: 0;
      text-decoration: none;
-     color: rgb(211, 0, 211);
+     color: #782bcd;    
      font-family: "Univers LT W01_67 Bold_1476016",Helvetica,Arial,sans-serif;
      width: 30vh;
      text-align: center;

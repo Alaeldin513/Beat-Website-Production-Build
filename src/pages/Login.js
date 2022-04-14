@@ -7,7 +7,7 @@ import {Register} from './Register'
 
 
 export default function Login() {
-    const userRef = useRef();
+    const emailRef = useRef();
     const passwordRef = useRef();
     // const { dispatch, isFetching} = useContext(Context);
 
@@ -43,13 +43,13 @@ return(
         </h1>
 
         <form className = "loginForm" >
-            <label className = "usernameFormat"> Username </label>
+            <label className = "usernameFormat"> Email </label>
             <br></br>
             <input 
                 type = "text"
                 className = "loginInput"
-                placeholder = "Enter your username"
-                ref = {userRef}
+                placeholder = "Enter your email"
+                ref = {emailRef}
             />    
             <br></br>
             <label className = "passwordFormat"> Password </label>
@@ -74,12 +74,16 @@ return(
             OR
         </span>
         
-        <form class = "registerForm">
-        <button className = "loginRegisterButton">
-            <a className = "registerLink" href = "/register" >
+        <form class = "registerForm" action = "http://localhost:3000/register">
+        
+        
+        <button className = "loginRegisterButton" >
+            <div className = "registerLink"  >
                 Register
-            </a>
+            </div> 
         </button>
+        
+
         </form>
         
     </section>

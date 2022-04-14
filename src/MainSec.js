@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './MainSec.css';  
 import axios from "axios"
 
+
 function MainSec () {
     const [posts, setPosts] = useState([]);
 
