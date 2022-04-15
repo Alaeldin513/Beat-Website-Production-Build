@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
+import { Redirect } from "react-router-dom";
 import './Login.css'
 import './Register.css'
 import axios from "axios";
-const crypto = require('crypto');
+import bcrypt from 'bcryptjs'
 //import { Context } from "../context/Context"
 
 
@@ -34,18 +35,20 @@ export default function Register() {
         console.log(password + confirmPassword + checkBox + email + artistName)
         
         if(password === confirmPassword && checkBox === true
-        && password != "" && email != "" && artistName != "") {
-        hashSlinger();  
-
+        && password != null && email != null && artistName != null) {
+        
+        //tried setting state of password to hashPassword but ran into difficulties
+        //sending hashPassword thru API instead of originally password
+        const passwordHash = hashSlinger();
+        
         
         try {
             setError({type: 'success'});
             await axios.post(PF, {
                 artistName,
                 email,
-                password
-            })  &&  
-            window.location.replace("/login")
+                passwordHash,
+            })   
         }
         catch (err) {
             console.log("error with post")
@@ -57,12 +60,16 @@ export default function Register() {
         }
     };    
 
-    const hashSlinger = async => {
-        const salt = crypto.randomBytes(16).toString('hex');
-        setPassword(crypto.pbkdf2Sync((password, salt, 1000, 64, 'sha256')).toString('hex'));
-        setEmail(crypto.pbkdf2Sync((email, salt, 1000, 64, 'sha256')).toString('hex'));
-        setConfirmPassword(crypto.pbkdf2Sync((confirmPassword, salt, 1000, 64, 'sha256')).toString('hex'));
-        
+    const hashSlinger = () => {
+        const saltRounds = 10;
+        const plainTextPassword = password;
+        const salt = bcrypt.genSaltSync(saltRounds);
+        const hash = bcrypt.hashSync(plainTextPassword, salt);
+        console.log(hash);
+        //holder until API for comparison built
+
+        const dbPassword = 'johngotti';
+        return hash;
     }
 
     return(
@@ -145,7 +152,7 @@ export default function Register() {
                 Sign up
             </button>
             
-            {error?.type === 'success' && <p> Successful Upload!</p>}
+            {error?.type === 'success' && <p> Successful Upload! Redirecting... </p> && <Redirect to ="/login" /> }
             {error?.type === 'error' && (
                 <p> Unsuccessful registry, make sure all fields are correct </p>
             )}    
