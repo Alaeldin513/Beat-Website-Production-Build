@@ -3,8 +3,8 @@ import './Login.css'
 import axios from "axios";
 import { Context } from "../context/Context"
 import './Register.css'
-import {Register} from './Register'
-import bcrypt from 'bcryptjs'
+import PropTypes from 'prop-types'
+
 
 
 export default function Login() {
@@ -15,22 +15,14 @@ export default function Login() {
     const [password, setPassword] = useState("null");
     // const { dispatch, isFetching} = useContext(Context);
 
-    const hashSlinger = (hash) => {
-        const saltRounds = 10;
-        const plainTextPassword = password;
-        const salt = bcrypt.genSaltSync(saltRounds);
-        const hashResult = bcrypt.hashSync(hash, salt);
-        return hashResult;
-    }
-
     const PF = "http://localhost:8080/user/login"
     const handleSubmit = async (e) => {
         e.preventDefault();
          //dispatchEvent({ type: "LOGIN_START"});
         try {
             await axios.post(PF, {
-                email: hashSlinger(email),
-                password: hashSlinger(password)
+                email: email,
+                password: password
             });
              //dispatchEvent({ type: "LOGIN_SUCCESS", payload: res.data});
         } catch (err) {
