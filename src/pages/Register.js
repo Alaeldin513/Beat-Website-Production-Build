@@ -28,6 +28,12 @@ export default function Register() {
 
     const PF = "http://localhost:8080/user/register"
     
+    const hashSlinger = (hash) => {
+        const saltRounds = 10;
+        const salt = bcrypt.genSaltSync(saltRounds);
+        const hashResult = bcrypt.hashSync(hash, salt);       
+        return hashResult;
+    }
     
 
     const handleSubmit = async (e) => {
@@ -39,14 +45,15 @@ export default function Register() {
         
         //tried setting state of password to hashPassword but ran into difficulties
         //sending hashPassword thru API instead of originally password
-        const passwordHash = hashSlinger();
+        const passwordHash = hashSlinger(password);
+        const emailHash = hashSlinger(email);
         
         
         try {
             setError({type: 'success'});
             await axios.post(PF, {
                 artistName,
-                email,
+                emailHash,
                 passwordHash,
             })   
         }
@@ -59,18 +66,6 @@ export default function Register() {
             console.log("please check to make sure fields are accurate")
         }
     };    
-
-    const hashSlinger = () => {
-        const saltRounds = 10;
-        const plainTextPassword = password;
-        const salt = bcrypt.genSaltSync(saltRounds);
-        const hash = bcrypt.hashSync(plainTextPassword, salt);
-        console.log(hash);
-        //holder until API for comparison built
-
-        const dbPassword = 'johngotti';
-        return hash;
-    }
 
     return(
 

@@ -14,11 +14,11 @@ import SongList from './SongList'
 
 import Context from './context/Context'
 
-// #782bcd #fcff00 #00afff #ffa700
+// #782bcd #fcff00 #00afff #ffa700 color scheme 
 
 
 function App() {
-  
+  const { user } = false; //sub out for use context
   
   return (
     <>
@@ -31,7 +31,7 @@ function App() {
           <Route path = '/songs' component = {Songs} />
           <Route path = '/login' component = {Login} />
           <Route path = '/register' component = {Register} />
-          <Route path = '/upload' component = {Upload} />
+          <Route path = '/upload' > {user ? <Upload/> : <Register/> }  </Route>
 
           {/* <Route path='/pricing' component = {Pricing} /> */}   
             
