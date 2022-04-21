@@ -8,6 +8,7 @@ import Songs from './pages/Songs'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Upload from './pages/Upload'
+import useToken from './useToken'
 
 import LandingPage from './LandingPage'
 import SongList from './SongList'
@@ -19,7 +20,11 @@ import Context from './context/Context'
 
 function App() {
   const { user } = false; //sub out for use context
+  const { token , setToken } = useToken(); //will be our authorization we change pages on
   
+  if(!token) {
+    <Route path = '/login' component = {Login} setToken = {setToken} />
+  }
   return (
     <>
       <Router>

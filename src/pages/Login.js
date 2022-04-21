@@ -4,15 +4,17 @@ import axios from "axios";
 import { Context } from "../context/Context"
 import './Register.css'
 import PropTypes from 'prop-types'
+import useToken from '../useToken'
+
 
 
 
 export default function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
-
     const [email, setEmail] = useState("null");
     const [password, setPassword] = useState("null");
+    const [token , setToken ] = useState('null');
     // const { dispatch, isFetching} = useContext(Context);
 
     const PF = "http://localhost:8080/user/login"
@@ -20,15 +22,19 @@ export default function Login() {
         e.preventDefault();
          //dispatchEvent({ type: "LOGIN_START"});
         try {
-            await axios.post(PF, {
+            const tokenRes = await axios.post(PF, {
                 email: email,
                 password: password
-            });
+            })
+            console.log(tokenRes.data)
              //dispatchEvent({ type: "LOGIN_SUCCESS", payload: res.data});
-        } catch (err) {
+        }
+         catch (err) {
              //dispatch({ type: "LOGIN_FAILURE"});
         }
+       // console.log(token)
     };
+
 
 return(
 
@@ -97,3 +103,6 @@ return(
 );
 }
 
+Login.propTypes = {
+    setToken: PropTypes.func.isRequired
+}
