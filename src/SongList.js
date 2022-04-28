@@ -139,15 +139,7 @@ export const SongList = [
     mood: "Epic",
     time: "1:53"
     }        ,
-
-    {
-    title: "Daydream",
-    artist: "Toni",
-    img_src: "../images/daydreamer.jpeg",
-    src: "../beats/Daydream prod.mp3",
-    mood: "Relaxed",
-    time: "3:41"
-    }        ,
+    
     {
     title: "Golden Corral",
     artist: "Toni",

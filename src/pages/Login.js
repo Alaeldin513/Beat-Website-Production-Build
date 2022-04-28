@@ -27,6 +27,7 @@ export default function Login() {
                 password: password
             })
             console.log(tokenRes.data)
+            setToken(tokenRes.data)
              //dispatchEvent({ type: "LOGIN_SUCCESS", payload: res.data});
         }
          catch (err) {
